@@ -142,6 +142,16 @@
 
                         <hr class="horizontal-line">
 
+                        <p style="margin-top: 0px; margin-bottom: 10px;"><b>Lab Analyst</b></p>
+                        <div class="form-group one-flex">
+                            <label class="top-label">Name</label>
+                            <input required type="text" class="large-input one-flex" name="sampling_number" placeholder="Name">
+                        </div>
+                        <div class="form-group one-flex">
+                            <label class="top-label">Contact Number</label>
+                            <input required type="text" class="large-input one-flex" name="location_capture" placeholder="Contact Number">
+                        </div>
+
                         <input type="submit" id="submit-button">
                     </form>
                 </div>
