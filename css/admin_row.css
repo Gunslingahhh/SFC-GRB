@@ -108,12 +108,11 @@ th {
     'sidenav header header '
     'sidenav info info_table'
     'sidenav info info_table';
-    background-color: #F0F0F0;
     width: 1300px;
 }
 
 .grid-container > div {
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: #F0F0F0;
 }
 
 #profile-picture{

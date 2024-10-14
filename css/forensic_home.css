@@ -87,10 +87,9 @@ tr:nth-child(odd) {
     grid-template-areas:
     'sidenav header'
     'sidenav stuff';
-    background-color: #F0F0F0;
     width: 1300px;
 }
 
 .grid-container > div {
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: #F0F0F0;
 }
