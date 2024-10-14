@@ -169,6 +169,7 @@ h1{
     grid-template-areas:
     'sidenav header header '
     'sidenav side form';
+    background-color: #F0F0F0;
     width: 1300px;
 }
 
