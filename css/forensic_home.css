@@ -1,0 +1,96 @@
+html{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: grey;
+}
+
+body{
+    margin: 0;
+}
+
+.center{
+    position: relative;
+    left:50%;
+    transform: translate(-50%);
+}
+
+#search-form{
+    /* background-color: red; */
+    width: 262px;
+    height: 38px;
+    position: relative;
+    left: 760px;
+    top: 20px;
+    border: 1px solid black;
+    border-radius: 15px;
+}
+
+#search-box{
+    position: relative;
+    width: 227px;
+    height: 38px;
+    border-radius: 15px 0 0 15px;
+    border: none;
+    margin:0;
+    padding:0;
+}
+
+#search-button{
+    position: relative;
+    width: 30px;
+    height: 38px;
+    border-radius: 0 15px 15px 0;
+    border: none;
+    margin:0;
+    padding:0;
+    left:0;
+}
+
+#search-button:hover{
+    cursor:pointer;
+}
+
+table {
+    position: relative;
+    border-collapse: collapse;
+    width: 1000px;
+    margin-top: 50px;
+}
+
+th, td {
+    padding: 8px;
+    text-align: center;
+}
+
+th {
+    color: white;
+    background-color: #545454;
+}
+
+tr:hover{
+    cursor:pointer;
+}
+
+tr:nth-child(even) {
+    background-color: #d6d6d6; /* Light gray */
+}
+
+tr:nth-child(odd) {
+    background-color: #ffffff; /* White */
+}
+
+.item1 { grid-area: sidenav; width:244px;height:auto;}
+.item2 { grid-area: header; width:1056px;height:80px;}
+.item3 { grid-area: stuff; width:1056px;height:auto;margin-top:-210px;}
+
+.grid-container {
+    display: grid;
+    grid-template-areas:
+    'sidenav header'
+    'sidenav stuff';
+    background-color: #F0F0F0;
+    width: 1300px;
+}
+
+.grid-container > div {
+    background-color: rgba(255, 255, 255, 0.8);
+}

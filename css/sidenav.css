@@ -1,0 +1,62 @@
+html{
+    font-family: Arial, Helvetica, sans-serif;
+    position: static;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.center{
+    position: relative;
+    left:50%;
+    transform: translate(-50%);
+}
+
+#sidenav{
+    position: relative;
+    width: 244px;
+    height: 100%;
+    background-color: #386b1f;
+    top: 0px;
+    left: 0px;
+}
+
+#user-photo{
+    object-fit: cover;
+    width: 140px;
+    height: 140px;
+    border-radius: 100px;
+    background-color: white;
+    position: relative;
+    margin-top: 30px;
+}
+
+#user-name{
+    color: white;
+    font-size: 15px;
+    text-align: center;
+    text-wrap: wrap;
+    position: relative;
+    padding-top: 15px;
+}
+
+a{
+    color: white;
+    font-size: 15px;
+    text-align: center;
+    position: relative;
+    text-decoration: none;
+}
+
+ul {
+    list-style-type: none;
+    position: relative;
+    margin: 0;
+    padding-top: 103px;
+}
+
+li{
+    padding-bottom: 35px;
+}
