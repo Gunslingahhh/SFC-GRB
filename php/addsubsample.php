@@ -35,13 +35,13 @@
                 <p class="title-text" style="margin-top: 175px;">Sample type</p>
                 <p class="subtitle-text">What is the type of sample collected?</p>
                 
-                <p class="title-text" style="margin-top: 540px;">DNA Extraction</p>
+                <p class="title-text" style="margin-top: 550px;">DNA Extraction</p>
                 
-                <p class="title-text" style="margin-top: 305px;">PCR</p>
+                <p class="title-text" style="margin-top: 295px;">PCR</p>
                 
-                <p class="title-text" style="margin-top: 380px;">Cleaning Raw Sequence</p>
+                <p class="title-text" style="margin-top: 390px;">Cleaning Raw Sequence</p>
                 
-                <p class="title-text" style="margin-top: 150px;">Attachments</p>
+                <p class="title-text" style="margin-top: 660px;">Attachments</p>
             </div>  
             <div class="item4"><div id="form-container">
                 <form action="user_process.php">
@@ -151,8 +151,32 @@
                     </div>
 
                     <div class="form-group one-flex">
-                        <label class="top-label">Contact Number</label>
-                        <div class="file-upload"></div>
+                        <div class="file-upload">
+                            <p><b>Raw Sequence</b></p>
+                            <div class="inner-file-upload">
+                            <p><span style="color: darkgreen;"><b>Upload</b></span> your file here</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group one-flex">
+                        <div class="file-upload">
+                            <p><b>Cleaned Sequence</b></p>
+                            <div class="inner-file-upload">
+                            <p><span style="color: darkgreen;"><b>Upload</b></span> your file here</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr class="horizontal-line">
+
+                    <div class="form-group one-flex">
+                        <div class="file-upload">
+                            <p><b>Photo Identification</b></p>
+                            <div class="inner-file-upload">
+                            <p><span style="color: darkgreen;"><b>Upload</b></span> your file here</p>
+                            </div>
+                        </div>
                     </div>
 
                     <input type="submit" id="submit-button">
