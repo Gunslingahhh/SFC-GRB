@@ -153,8 +153,9 @@
                     <div class="form-group one-flex">
                         <div class="file-upload">
                             <p><b>Raw Sequence</b></p>
-                            <div class="inner-file-upload">
+                            <div class="inner-file-upload" id="raw-sequence-container">
                             <p><span style="color: darkgreen;"><b>Upload</b></span> your file here</p>
+                            <input type="file" id="raw-sequence" name="raw-sequence" accept=".txt" style="display:none;">
                             </div>
                         </div>
                     </div>
@@ -162,8 +163,9 @@
                     <div class="form-group one-flex">
                         <div class="file-upload">
                             <p><b>Cleaned Sequence</b></p>
-                            <div class="inner-file-upload">
-                            <p><span style="color: darkgreen;"><b>Upload</b></span> your file here</p>
+                            <div class="inner-file-upload" id="cleaned-sequence-container">
+                                <p><span style="color: darkgreen;"><b>Upload</b></span> your file here</p>
+                                <input type="file" id="cleaned-sequence" name="cleaned-sequence" accept=".txt" style="display:none;">
                             </div>
                         </div>
                     </div>
@@ -173,8 +175,9 @@
                     <div class="form-group one-flex">
                         <div class="file-upload">
                             <p><b>Photo Identification</b></p>
-                            <div class="inner-file-upload">
-                            <p><span style="color: darkgreen;"><b>Upload</b></span> your file here</p>
+                            <div class="inner-file-upload" id="photo-identification-container">
+                                <p><span style="color: darkgreen;"><b>Upload</b></span> your file here</p>
+                                <input type="file" id="photo-identification" name="photo-identification" accept="image/jpeg, image/png, image/jpg" style="display:none;">
                             </div>
                         </div>
                     </div>

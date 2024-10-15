@@ -86,7 +86,7 @@ tr:nth-child(odd) {
     display: grid;
     grid-template-areas:
     'sidenav header header '
-    'sidenav side form';
+    'sidenav stuff stuff';
     background-color: #F0F0F0;
     width: 1300px;
 }

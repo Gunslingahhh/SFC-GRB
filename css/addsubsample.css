@@ -192,6 +192,10 @@ h1{
     text-wrap:wrap;
 }
 
+.inner-file-upload:hover{
+    cursor: pointer;
+}
+
 .inner-file-upload p{
     text-align: center;
     margin-top: 50px;
