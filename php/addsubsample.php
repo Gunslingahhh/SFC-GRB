@@ -41,10 +41,10 @@
                 
                 <p class="title-text" style="margin-top: 390px;">Cleaning Raw Sequence</p>
                 
-                <p class="title-text" style="margin-top: 660px;">Attachments</p>
+                <p class="title-text" style="margin-top: 780px;">Attachments</p>
             </div>  
             <div class="item4"><div id="form-container">
-                <form action="user_process.php">
+                <form action="addsubsample_process.php">
                     <div class="form-group one-flex">
                         <label class="top-label">Date collected</label>
                         <input required type="date" class="large-input one-flex" name="sampling_number">
@@ -154,8 +154,9 @@
                         <div class="file-upload">
                             <p><b>Raw Sequence</b></p>
                             <div class="inner-file-upload" id="raw-sequence-container">
-                            <p><span style="color: darkgreen;"><b>Upload</b></span> your file here</p>
-                            <input type="file" id="raw-sequence" name="raw-sequence" accept=".txt" style="display:none;">
+                                <p><span style="color: darkgreen;"><b>Upload</span> your file here</b></p>
+                                <p class="file-name" id="rawSequencefileName"></p>
+                                <input type="file" id="raw-sequence" name="raw-sequence" accept=".txt" style="display:none;">
                             </div>
                         </div>
                     </div>
@@ -164,7 +165,8 @@
                         <div class="file-upload">
                             <p><b>Cleaned Sequence</b></p>
                             <div class="inner-file-upload" id="cleaned-sequence-container">
-                                <p><span style="color: darkgreen;"><b>Upload</b></span> your file here</p>
+                                <p><span style="color: darkgreen;"><b>Upload</span> your file here</b></p>
+                                <p class="file-name" id="cleanedSequencefileName"></p>
                                 <input type="file" id="cleaned-sequence" name="cleaned-sequence" accept=".txt" style="display:none;">
                             </div>
                         </div>

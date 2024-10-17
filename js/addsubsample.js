@@ -12,8 +12,22 @@ document.addEventListener('DOMContentLoaded', () => {
         rawSequence.click();
     });
 
+    rawSequence.addEventListener('change', function() {
+        const file = rawSequence.files[0];
+        const fileName = file.name;
+        const fileSize = file.size;
+        document.getElementById('rawSequencefileName').textContent = fileName + " ("+ fileSize + " KB)";
+    });
+
     cleanedSequenceContainer.addEventListener("click", function() {
         cleanedSequence.click();
+    });
+
+    cleanedSequence.addEventListener('change', function() {
+        const file = cleanedSequence.files[0];
+        const fileName = file.name;
+        const fileSize = file.size;
+        document.getElementById('cleanedSequencefileName').textContent = fileName + " ("+ fileSize + " KB)";
     });
 
     photoIdentificationContainer.addEventListener("click", function() {

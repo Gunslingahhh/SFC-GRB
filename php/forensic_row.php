@@ -61,7 +61,7 @@
                     <p><b>Species:</b> <?php echo($species) ?></p>
                     <p><b>Sex:</b> <?php echo($sex) ?></p>
                     <p><b>Age:</b> <?php echo($age) ?></p>
-                    <p><b>Weight:</b> <?php echo($weight) ?></p>
+                    <p><b>Weight:</b> <?php echo($weight) ?> kg</p>
                     <p><b>Vouchered?:</b> <?php echo($isVouchered) ?></p>
                     <p><b>Sampling Method:</b> <?php echo($sampleMethod) ?></p>
                 </div>

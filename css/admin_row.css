@@ -106,7 +106,7 @@ th {
     display: grid;
     grid-template-areas:
     'sidenav header header '
-    'sidenav side form';
+    'sidenav info info_table';
     background-color: #F0F0F0;
     width: 1300px;
 }

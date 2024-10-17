@@ -178,18 +178,22 @@ h1{
 }
 
 .file-upload{
-    width: 240px;
-    height: 160px;
+    width: 300px;
+    height: 220px;
     padding: 20px;
     background-color: white;
+    border: 1px solid black;
+    border-radius: 20px;
 }
 
 .inner-file-upload{
-    width: 240px;
-    height: 120px;
-    border: 2px dashed blue;
+    width: 295px;
+    height: 110px;
+    border: 2px solid blue;
+    border-radius: 10px;
     margin-top: 20px;
     text-wrap:wrap;
+    padding-top: 50px;
 }
 
 .inner-file-upload:hover{
@@ -198,5 +202,8 @@ h1{
 
 .inner-file-upload p{
     text-align: center;
-    margin-top: 50px;
 }
+
+.file-name{
+    margin-top: 25px;
+} 
