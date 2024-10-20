@@ -33,4 +33,16 @@ document.addEventListener('DOMContentLoaded', () => {
     photoIdentificationContainer.addEventListener("click", function() {
         photoIdentification.click();
     });
+
+    photoIdentification.addEventListener('change', function() {
+        const file = photoIdentification.files[0];
+        const fileName = file.name;
+        const reader = new FileReader();
+
+        reader.onload = function(e) {
+            photoIdentificationContainer.src = e.target.result;
+        };
+
+        reader.readAsDataURL(file);
+    });
 });
