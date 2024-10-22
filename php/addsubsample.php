@@ -177,9 +177,8 @@
                     <div class="form-group one-flex">
                         <div class="file-upload">
                             <p><b>Photo Identification</b></p>
-                                <img class="inner-file-upload" id="photo-identification-container">
-                                <p><span style="color: darkgreen;"><b>Upload</b></span> your file here</p>
-                                <input type="file" id="photo-identification" name="photo-identification" accept="image/jpeg, image/png, image/jpg" style="display:none;">
+                            <img class="inner-file-upload" id="photo-identification-container">
+                            <input type="file" id="photo-identification" name="photo-identification" accept="image/jpeg, image/png, image/jpg" style="display:none;">
                         </div>
                     </div>
 

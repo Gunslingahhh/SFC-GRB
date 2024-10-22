@@ -206,4 +206,8 @@ h1{
 
 .file-name{
     margin-top: -20px;
-} 
+}
+
+#photo-identification-container{
+    object-fit: contain;
+}

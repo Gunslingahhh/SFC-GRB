@@ -36,7 +36,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     photoIdentification.addEventListener('change', function() {
         const file = photoIdentification.files[0];
-        const fileName = file.name;
         const reader = new FileReader();
 
         reader.onload = function(e) {
