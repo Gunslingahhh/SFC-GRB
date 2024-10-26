@@ -106,15 +106,15 @@
                     <p style="margin-top: 0px; margin-bottom: 10px;"><b>Lab Analyst</b></p>
                     <div class="form-group one-flex">
                         <label class="top-label">Name</label>
-                        <input required type="text" class="large-input one-flex" name="dna-lab-name" placeholder="Name">
+                        <input type="text" class="large-input one-flex" name="dna-lab-name" placeholder="Name">
                     </div>
                     <div class="form-group one-flex">
                         <label class="top-label">Contact Number</label>
-                        <input required type="text" class="large-input one-flex" name="dna-lab-number" placeholder="Contact Number">
+                        <input type="text" class="large-input one-flex" name="dna-lab-number" placeholder="Contact Number">
                     </div>
                     <div class="form-group one-flex">
                         <p style="margin-bottom: 0px;"><b>DNA Extraction Size (bp)</b></p>
-                        <input required type="text" class="large-input one-flex" name="dna-extraction-size" placeholder="DNA Extraction Size (bp)">
+                        <input type="number" step="0.01" class="large-input one-flex" name="dna-extraction-size" placeholder="DNA Extraction Size (bp)">
                     </div>
 
                     <hr class="horizontal-line">
@@ -122,22 +122,22 @@
                     <p style="margin-top: 0px; margin-bottom: 10px;"><b>Lab Analyst</b></p>
                     <div class="form-group one-flex">
                         <label class="top-label">Name</label>
-                        <input required type="text" class="large-input one-flex" name="pcr-lab-name" placeholder="Name">
+                        <input type="text" class="large-input one-flex" name="pcr-lab-name" placeholder="Name">
                     </div>
                     <div class="form-group one-flex">
                         <label class="top-label">Contact Number</label>
-                        <input required type="text" class="large-input one-flex" name="pcr-lab-number" placeholder="Contact Number">
+                        <input type="text" class="large-input one-flex" name="pcr-lab-number" placeholder="Contact Number">
                     </div>
                     <div class="form-group one-flex">
                         <p style="margin-bottom: 0px;"><b>PCR Amplification</b></p>
                     </div>
                     <div class="form-group one-flex">
                         <label class="top-label">Primer Used</label>
-                        <input required type="text" class="large-input one-flex" name="primer-used" placeholder="Primer Used">
+                        <input type="text" class="large-input one-flex" name="primer-used" placeholder="Primer Used">
                     </div>
                     <div class="form-group one-flex">
                         <label class="top-label">Blast Result (%)</label>
-                        <input required type="text" class="large-input one-flex" name="blast-result" placeholder="Blast Result (%)">
+                        <input type="number" step="0.01" class="large-input one-flex" name="blast-result" placeholder="Blast Result (%)">
                     </div>
 
                     <hr class="horizontal-line">
@@ -145,11 +145,11 @@
                     <p style="margin-top: 0px; margin-bottom: 10px;"><b>Lab Analyst</b></p>
                     <div class="form-group one-flex">
                         <label class="top-label">Name</label>
-                        <input required type="text" class="large-input one-flex" name="cleaning-lab-name" placeholder="Name">
+                        <input type="text" class="large-input one-flex" name="cleaning-lab-name" placeholder="Name">
                     </div>
                     <div class="form-group one-flex">
                         <label class="top-label">Contact Number</label>
-                        <input required type="text" class="large-input one-flex" name="cleaning-lab-number" placeholder="Contact Number">
+                        <input type="text" class="large-input one-flex" name="cleaning-lab-number" placeholder="Contact Number">
                     </div>
 
                     <div class="form-group one-flex">
