@@ -66,7 +66,7 @@
                     <p><b>Sampling Method:</b> <?php echo($sampleMethod) ?></p>
                 </div>
 
-                <a href="addsubsample.php" id="add-subsample-button">
+                <a href="addsubsample.php?id=<?php echo $id ?>" id="add-subsample-button">
                     Add Subsample
                 </a>
 

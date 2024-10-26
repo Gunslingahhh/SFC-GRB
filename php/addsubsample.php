@@ -7,6 +7,8 @@
         header("Location: ../index.php");
         exit();
     }
+
+    $id = $_GET['id'];
 ?>
 
 <!DOCTYPE html>
@@ -44,7 +46,7 @@
                 <p class="title-text" style="margin-top: 780px;">Attachments</p>
             </div>  
             <div class="item4"><div id="form-container">
-                <form action="addsubsample_process.php" enctype="multipart/form-data" method="POST">
+                <form action="addsubsample_process.php?id=<?php echo $id ?>" enctype="multipart/form-data" method="POST">
                     <div class="form-group one-flex">
                         <label class="top-label">Date collected</label>
                         <input required type="date" class="large-input one-flex" name="date-collected">
@@ -58,45 +60,45 @@
 
                     <div class="form-group two-flex">
                         <p><b>Biopsy</b></p>
-                        <input required type="radio" class="radio-input" name="sample-type" value="">Liver<br>
-                        <input required type="radio" class="radio-input" name="sample-type" value="">Muscle<br>
-                        <input required type="radio" class="radio-input" name="sample-type" value="">Kidney<br>
-                        <input required type="radio" class="radio-input" name="sample-type" value="">Lung<br>
-                        <input required type="radio" class="radio-input" name="sample-type" value="">Heart<br>
-                        <input required type="radio" class="radio-input" name="sample-type" value="">Spleen<br>
-                        <input required type="radio" class="radio-input" name="sample-type" value="">Small Intestine<br>
-                        <input required type="radio" class="radio-input" name="sample-type" value="">Large Intestine<br>
+                        <input required type="radio" class="radio-input" name="sample-type" value="1">Liver<br>
+                        <input required type="radio" class="radio-input" name="sample-type" value="2">Muscle<br>
+                        <input required type="radio" class="radio-input" name="sample-type" value="3">Kidney<br>
+                        <input required type="radio" class="radio-input" name="sample-type" value="4">Lung<br>
+                        <input required type="radio" class="radio-input" name="sample-type" value="5">Heart<br>
+                        <input required type="radio" class="radio-input" name="sample-type" value="6">Spleen<br>
+                        <input required type="radio" class="radio-input" name="sample-type" value="7">Small Intestine<br>
+                        <input required type="radio" class="radio-input" name="sample-type" value="8">Large Intestine<br>
                         <br>
                         <p><b>Blood</b></p>
-                        <input required type="radio" class="radio-input" name="sample-type" value="">EDTA<br>
-                        <input required type="radio" class="radio-input" name="sample-type" value="">FTA Card<br>
-                        <input required type="radio" class="radio-input" name="sample-type" value="">Plain<br>
+                        <input required type="radio" class="radio-input" name="sample-type" value="9">EDTA<br>
+                        <input required type="radio" class="radio-input" name="sample-type" value="10">FTA Card<br>
+                        <input required type="radio" class="radio-input" name="sample-type" value="11">Plain<br>
                         <br>
                         <p><b>Swab</b></p>
-                        <input required type="radio" class="radio-input" name="sample-type" value="">Rectal<br>
-                        <input required type="radio" class="radio-input" name="sample-type" value="">Urine<br>
-                        <input required type="radio" class="radio-input" name="sample-type" value="">Throat<br>
+                        <input required type="radio" class="radio-input" name="sample-type" value="12">Rectal<br>
+                        <input required type="radio" class="radio-input" name="sample-type" value="13">Urine<br>
+                        <input required type="radio" class="radio-input" name="sample-type" value="14">Throat<br>
                     </div>
 
                     <div class="form-group two-flex">
                         <p><b>Others</b></p>
-                        <input required type="radio" class="radio-input" name="sample-type" value="">Hair<br>
-                        <input required type="radio" class="radio-input" name="sample-type" value="">Fur<br>
-                        <input required type="radio" class="radio-input" name="sample-type" value="">Feather<br>
-                        <input required type="radio" class="radio-input" name="sample-type" value="">Antler<br>
-                        <input required type="radio" class="radio-input" name="sample-type" value="">Scale<br>
-                        <input required type="radio" class="radio-input" name="sample-type" value="">Fecal<br>
-                        <input required type="radio" class="radio-input" name="sample-type" value="">Skin<br>
-                        <input required type="radio" class="radio-input" name="sample-type" value="">Scute<br>
-                        <input required type="radio" class="radio-input" name="sample-type" value="">Punch<br>
-                        <input required type="radio" class="radio-input" name="sample-type" value="">Tooth<br>
-                        <input required type="radio" class="radio-input" name="sample-type" value="">Nail / Claw<br>
-                        <input required type="radio" class="radio-input" name="sample-type" value="">Skull<br>
-                        <input required type="radio" class="radio-input" name="sample-type" value="">Stomach Content<br>
-                        <input required type="radio" class="radio-input" name="sample-type" value="">Whole Body<br>
-                        <input required type="radio" class="radio-input" name="sample-type" value="">Tick<br>
-                        <input required type="radio" class="radio-input" name="sample-type" value="">Mite<br>
-                        <input required type="radio" class="radio-input" name="sample-type" value="">Spike<br>
+                        <input required type="radio" class="radio-input" name="sample-type" value="15">Hair<br>
+                        <input required type="radio" class="radio-input" name="sample-type" value="16">Fur<br>
+                        <input required type="radio" class="radio-input" name="sample-type" value="17">Feather<br>
+                        <input required type="radio" class="radio-input" name="sample-type" value="18">Antler<br>
+                        <input required type="radio" class="radio-input" name="sample-type" value="19">Scale<br>
+                        <input required type="radio" class="radio-input" name="sample-type" value="20">Fecal<br>
+                        <input required type="radio" class="radio-input" name="sample-type" value="21">Skin<br>
+                        <input required type="radio" class="radio-input" name="sample-type" value="22">Scute<br>
+                        <input required type="radio" class="radio-input" name="sample-type" value="23">Punch<br>
+                        <input required type="radio" class="radio-input" name="sample-type" value="24">Tooth<br>
+                        <input required type="radio" class="radio-input" name="sample-type" value="25">Nail / Claw<br>
+                        <input required type="radio" class="radio-input" name="sample-type" value="26">Skull<br>
+                        <input required type="radio" class="radio-input" name="sample-type" value="27">Stomach Content<br>
+                        <input required type="radio" class="radio-input" name="sample-type" value="28">Whole Body<br>
+                        <input required type="radio" class="radio-input" name="sample-type" value="29">Tick<br>
+                        <input required type="radio" class="radio-input" name="sample-type" value="30">Mite<br>
+                        <input required type="radio" class="radio-input" name="sample-type" value="31">Spike<br>
                     </div>
 
                     <hr class="horizontal-line">
