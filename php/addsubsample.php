@@ -8,7 +8,7 @@
         exit();
     }
 
-    $id = $_GET['id'];
+    $id = $_GET['specimen_id'];
 ?>
 
 <!DOCTYPE html>
@@ -46,7 +46,7 @@
                 <p class="title-text" style="margin-top: 780px;">Attachments</p>
             </div>  
             <div class="item4"><div id="form-container">
-                <form action="addsubsample_process.php?id=<?php echo $id ?>" enctype="multipart/form-data" method="POST">
+                <form action="addsubsample_process.php?specimen_id=<?php echo $id ?>" enctype="multipart/form-data" method="POST">
                     <div class="form-group one-flex">
                         <label class="top-label">Date collected</label>
                         <input required type="date" class="large-input one-flex" name="date-collected">

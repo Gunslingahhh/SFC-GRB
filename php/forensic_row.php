@@ -10,12 +10,12 @@
 
     include "connection.php";
 
-    $id = $_GET['id'];
+    $id = $_GET['specimen_id'];
 
     $detail_check = $conn->prepare("SELECT * FROM specimen WHERE specimen_id = $id");
     $detail_check->execute();
     $detail_result = $detail_check->get_result();
-    
+
     while ($user_row = $detail_result->fetch_assoc()) {
         $collectionNumber=$user_row['specimen_collectionNumber'];
         $sex=$user_row['specimen_sex'];
@@ -66,7 +66,7 @@
                     <p><b>Sampling Method:</b> <?php echo($sampleMethod) ?></p>
                 </div>
 
-                <a href="addsubsample.php?id=<?php echo $id ?>" id="add-subsample-button">
+                <a href="addsubsample.php?specimen_id=<?php echo $id ?>" id="add-subsample-button">
                     Add Subsample
                 </a>
 

@@ -10,7 +10,7 @@
 
     include "connection.php";
 
-    $id = $_GET['id'];
+    $id = $_GET['specimen_id'];
 
     // Check if user_id is set in session
     if (isset($_SESSION['userid'])) {
@@ -54,12 +54,16 @@
             $raw_target_file = $raw_target_dir . $raw_newfilename;
             
             if(move_uploaded_file($rawSequenceTemp, $raw_target_file)) {
-                echo "Nice";
+                $raw_target_file = $raw_target_dir . $raw_newfilename;
+                header("Location: forensic_row.php?specimen_id=$id");
             } else {
+                $raw_target_file = "";
                 echo "Error uploading file.";
+                header("Location: forensic_row.php?specimen_id=$id");
             }
         }else{
             $raw_target_file = "";
+            header("Location: forensic_row.php?specimen_id=$id");
         }
         
         if ($cleanedSequenceTemp != ""){
@@ -69,12 +73,16 @@
             $cleaned_target_file = $cleaned_target_dir . $cleaned_newfilename;
 
             if(move_uploaded_file($cleanedSequenceTemp, $cleaned_target_file)) {
-                echo "Nice";
+                $cleaned_target_file = $cleaned_target_dir . $cleaned_newfilename;
+                header("Location: forensic_row.php?specimen_id=$id");
             } else {
+                $cleaned_target_file = "";
                 echo "Error uploading file.";
+                header("Location: forensic_row.php?specimen_id=$id");
             }
         }else{
             $cleaned_target_file = "";
+            header("Location: forensic_row.php?specimen_id=$id");
         }
         
         if ($photoSequenceTemp != ""){
@@ -84,21 +92,26 @@
             $photo_target_file = $photo_target_dir . $photo_newfilename;
 
             if(move_uploaded_file($photoSequenceTemp, $photo_target_file)) {
-                echo "Nice";
+                $photo_target_file = $photo_target_dir . $photo_newfilename;
+                header("Location: forensic_row.php?specimen_id=$id");
             } else {
+                $photo_target_file = "";
                 echo "Error uploading file.";
+                header("Location: forensic_row.php?specimen_id=$id");
             }
         }else{
             $photo_target_file = "";
+            header("Location: forensic_row.php?specimen_id=$id");
         }
-
-        
 
         $sql = $conn->prepare("INSERT INTO subSample(
             specimen_id,
             sampleType_id,
             subSample_dateCollected,
             subSample_storageLocation,
+            subSample_dnaLabName,
+            subSample_dnaLabNumber,
+            subSample_dnaExtractionSize,
             subSample_pcrLabName,
             subSample_pcrLabNumber,
             subSample_primerUsed,
@@ -107,21 +120,35 @@
             subSample_cleaningLabNumber,
             subSample_rawSequence,
             subSample_cleanedSequence,
-            subSample_photoIdentification) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)");
+            subSample_photoIdentification) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
 
-            echo $id . "<br>";
-            echo $sampleType . "<br>";
-            echo $dateCollected . "<br>";
-            echo $storageLocation . "<br>";
-            echo $pcrLabName . "<br>";
-            echo $pcrLabNumber . "<br>";
-            echo $primerUsed . "<br>";
-            echo $blastResult . "<br>";
-            echo $cleaningLabName . "<br>";
-            echo $cleaningLabNumber . "<br>";
-            echo $raw_target_file . "<br>";
-            echo $cleaned_target_file . "<br>";
-            echo $photo_target_file . "<br>";
+        $sql->bind_param("iissssisssisssss", 
+            $id,
+            $sampleType,
+            $dateCollected,
+            $storageLocation,
+            $dnaLabName,
+            $dnaLabNumber,
+            $dnaExtractionSize,
+            $pcrLabName,
+            $pcrLabNumber,
+            $primerUsed,
+            $blastResult,
+            $cleaningLabName,
+            $cleaningLabNumber,
+            $raw_target_file,
+            $cleaned_target_file,
+            $photo_target_file);
+
+        if ($sql->execute()) {
+            $_SESSION['message'] = "Task posted successfully!";
+            header("Location: forensic_row.php?specimen_id=$id");
+            exit();
+        } else {
+            $_SESSION['error'] = "Error registering user: " . $sql->error;
+            header("Location: forensic_row.php?specimen_id=$id");
+            exit();
+        }
 
         $conn->close();
     }

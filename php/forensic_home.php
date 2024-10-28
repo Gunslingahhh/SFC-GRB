@@ -56,7 +56,7 @@
                             $forensic_result = $forensic_stmt->get_result();
 
                             while ($forensic_row = $forensic_result->fetch_assoc()) {
-                                echo "<tr onclick='window.location.href = \"forensic_row.php?id=" . $forensic_row['specimen_id'] . "\";'>";
+                                echo "<tr onclick='window.location.href = \"forensic_row.php?specimen_id=" . $forensic_row['specimen_id'] . "\";'>";
                                     echo "<td>" . $forensic_row['specimen_id'] . "</td>";
                                     echo "<td>" . $forensic_row['specimen_class'] . "</td>";
                                     echo "<td>" . $forensic_row['specimen_genus'] . "</td>";
