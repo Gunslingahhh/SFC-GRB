@@ -48,12 +48,12 @@
             <div class="item3">
                 <div id="info-container" class="center">
                 <img src="<?php echo $profilePicture; ?>" id="profile-picture">
-                <p><b>Username: </b><?php echo($userName) ?></p>
-                <p><b>Full Name: </b><?php echo($fullName) ?></p>
-                <p><b>Email: </b><?php echo($email) ?></p>
-                <p><b>Contact Number: </b><?php echo($contactNumber) ?></p>
-                <p><b>Role: </b><?php echo($role) ?></p>
-                <p><b>Organization: </b><?php echo($organization) ?></p>
+                <p><b>Username:</b><span><?php echo($userName) ?></p>
+                <p><b>Full Name:</b><span><?php echo($fullName) ?></p>
+                <p><b>Email:</b><span><?php echo($email) ?></p>
+                <p><b>Contact Number:</b><span><?php echo($contactNumber) ?></p>
+                <p><b>Role:</b><span><?php echo($role) ?></p>
+                <p><b>Organization:</b><span><?php echo($organization) ?></p>
                 </div>
             </div>
             <div class="item4">
