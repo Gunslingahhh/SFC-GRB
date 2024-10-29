@@ -63,6 +63,7 @@
                     <p><b>Age:</b> <?php echo($age) ?></p>
                     <p><b>Weight:</b> <?php echo($weight) ?> kg</p>
                     <p><b>Vouchered?:</b> <?php echo($isVouchered) ?></p>
+                    <p><b>Storage location of vouchered specimen:</b> <?php echo($storageLocationVoucheredSpecimen) ?></p>
                     <p><b>Sampling Method:</b> <?php echo($sampleMethod) ?></p>
                 </div>
 

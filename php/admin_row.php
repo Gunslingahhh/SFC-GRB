@@ -58,12 +58,30 @@
             </div>
             <div class="item4">
                 <table class="center">
-                    <tr>
-                        <th>Subsample ID</th>
-                        <th>Raw Sequence</th>
-                        <th>Cleaned Sequence</th>
-                        <th>Photo Identification</th>
-                    </tr>
+                    <thead>
+                        <tr>
+                            <th>Specimen ID</th>
+                            <th>Class</th>
+                            <th>Genus</th>
+                            <th>Species</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                            $sql = $conn->prepare("SELECT specimen_id, specimen_class, specimen_genus, specimen_species FROM specimen WHERE user_id = $id");
+                            $sql->execute();
+                            $result = $sql->get_result();
+                            
+                            while ($specimen_row = $result->fetch_assoc()) {
+                                echo "<tr>";
+                                echo "<td>" . $specimen_row['specimen_id'] . "</td>";
+                                echo "<td>" . $specimen_row['specimen_class'] . "</td>";
+                                echo "<td>" . $specimen_row['specimen_genus'] . "</td>";
+                                echo "<td>" . $specimen_row['specimen_species'] . "</td>";
+                                echo "</tr>";
+                            }
+                        ?>
+                    </tbody>
                 </table>
             </div>
         </div>
