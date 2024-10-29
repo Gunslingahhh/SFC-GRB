@@ -53,18 +53,18 @@
             </div>
             <div class="item3">
                 <div id="info-container" class="center">
-                    <p><b>Sampling collection number:</b> <?php echo($collectionNumber) ?></p><input class="" type="text" disabled value="Test">
-                    <p><b>Location of capture:</b> <?php echo($locationCapture) ?></p>
-                    <p><b>GPS of capture:</b> <?php echo($latitude . "&nbsp&nbsp" . $longitude) ?></p>
-                    <p><b>Class:</b> <?php echo($class) ?></p>
-                    <p><b>Genus:</b> <?php echo($genus) ?></p>
-                    <p><b>Species:</b> <?php echo($species) ?></p>
-                    <p><b>Sex:</b> <?php echo($sex) ?></p>
-                    <p><b>Age:</b> <?php echo($age) ?></p>
-                    <p><b>Weight:</b> <?php echo($weight) ?> kg</p>
-                    <p><b>Vouchered?:</b> <?php echo($isVouchered) ?></p>
-                    <p><b>Storage location of vouchered specimen:</b> <?php echo($storageLocationVoucheredSpecimen) ?></p>
-                    <p><b>Sampling Method:</b> <?php echo($sampleMethod) ?></p>
+                    <p><b>Sampling collection number:</b><span><?php echo($collectionNumber) ?></span></p>
+                    <p><b>Location of capture:</b><span><?php echo($locationCapture) ?></p>
+                    <p><b>GPS of capture:</b><span><?php echo($latitude . "&nbsp&nbsp" . $longitude) ?></span></p>
+                    <p><b>Class:</b><span><?php echo($class) ?></span></p>
+                    <p><b>Genus:</b><span><?php echo($genus) ?></span></p>
+                    <p><b>Species:</b><span><?php echo($species)?></span></p>
+                    <p><b>Sex:</b><span><?php echo($sex) ?></span></p>
+                    <p><b>Age:</b><span><?php echo($age) ?></span></p>
+                    <p><b>Weight:</b><span><?php echo($weight) ?></span></p>
+                    <p><b>Vouchered?:</b><span><?php echo($isVouchered) ?></span></p>
+                    <p><b>Storage location of vouchered?:</b><span><?php echo($storageLocationVoucheredSpecimen) ?></span></p>
+                    <p><b>Sampling Method:</b><span><?php echo($sampleMethod) ?></span></p>
                 </div>
 
                 <a href="addsubsample.php?specimen_id=<?php echo $id ?>" id="add-subsample-button">

@@ -22,7 +22,7 @@ h1{
 #info-container{
     position: relative;
     width: 966px;
-    height: 550px;
+    height: 570px;
     background-color: #d6d6d6;
     padding-top: 30px;
     padding-left: 30px;
@@ -141,4 +141,8 @@ tr:nth-child(odd) {
 img{
     width: 15px;
     border-radius: 20px;
+}
+
+span{
+    background-color: white;
 }
