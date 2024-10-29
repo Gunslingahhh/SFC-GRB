@@ -115,3 +115,30 @@ th {
 .grid-container > div {
     background-color: #F0F0F0;
 }
+
+th, td {
+    padding: 8px;
+    text-align: center;
+}
+
+th {
+    color: white;
+    background-color: #545454;
+}
+
+tr:hover{
+    cursor:pointer;
+}
+
+tr:nth-child(even) {
+    background-color: #d6d6d6; /* Light gray */
+}
+
+tr:nth-child(odd) {
+    background-color: #ffffff; /* White */
+}
+
+img{
+    width: 20px;
+    border-radius: 20px;
+}

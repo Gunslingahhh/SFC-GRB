@@ -50,14 +50,14 @@
                         $detail_result = $detail_check->get_result();
                         
                         while ($user_row = $detail_result->fetch_assoc()) {
-                            echo "<tr onclick='window.location.href = \"admin_row.php?id=" . $user_row['user_id'] . "\";'>";
+                            echo "<tr onclick='window.location.href = \"admin_row.php?user_id=" . $user_row['user_id'] . "\";'>";
                             echo "<td>" . $user_row['user_id'] . "</td>";
                             echo "<td>" . $user_row['user_username'] . "</td>";
                             echo "<td>" . $user_row['user_fullname'] . "</td>";
                             echo "<td>" . $user_row['user_email'] . "</td>";
                             echo "<td>" . $user_row['user_type'] . "</td>";
                             echo "<td><img src='" . $user_row['user_profilePicture'] . "' width='30'></td>";
-                            echo "</tr></a>";
+                            echo "</tr>";
                         }
                         ?>
                     </tbody>

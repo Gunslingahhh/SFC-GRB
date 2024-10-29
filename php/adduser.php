@@ -61,7 +61,7 @@
                             <input type="text" class="large-input one-flex" name="password" placeholder="Password">
                         </div>
                         <div class="form-group one-flex">
-                            <label class="top-label">Age</label>
+                            <label class="top-label">Role</label>
                                     <select required name="user_role" class="large-input">
                                         <option value=""> ========== Role ========== </option>
                                         <option value="User">USER</option>

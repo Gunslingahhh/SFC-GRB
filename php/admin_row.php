@@ -10,7 +10,7 @@
 
     include "connection.php";
 
-    $id = $_GET['id'];
+    $id = $_GET['user_id'];
 
     $detail_check = $conn->prepare("SELECT * FROM user WHERE user_id = $id");
     $detail_check->execute();

@@ -76,12 +76,52 @@
                 </form>
 
                 <table class="center">
-                    <tr>
-                        <th>Subsample ID</th>
-                        <th>Raw Sequence</th>
-                        <th>Cleaned Sequence</th>
-                        <th>Photo Identification</th>
-                    </tr>
+                    <thead>
+                        <tr>
+                            <th>Subsample ID</th>
+                            <th>Raw Sequence</th>
+                            <th>Cleaned Sequence</th>
+                            <th>Photo Identification</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                            $sql = $conn->prepare("SELECT subSample_id, subSample_rawSequence, subSample_cleanedSequence, subSample_photoIdentification FROM subSample WHERE specimen_id = $id");
+                            $sql->execute();
+                            $result = $sql->get_result();
+
+                            $rawSequence_status="../assets/image/wrong.png";
+                            $cleanedSequence_status="../assets/image/wrong.png";
+                            $photoIdentification_status="../assets/image/wrong.png";
+
+                            while ($subsample_row = $result->fetch_assoc()){
+                                if($subsample_row['subSample_rawSequence']!=""){
+                                    $rawSequence_status="../assets/image/correct.png";
+                                }else{
+                                    $rawSequence_status="../assets/image/wrong.png";
+                                }
+                                
+                                if($subsample_row['subSample_cleanedSequence']!=""){
+                                    $cleanedSequence_status="../assets/image/correct.png";
+                                }else{
+                                    $cleanedSequence_status="../assets/image/wrong.png";
+                                }
+    
+                                if($subsample_row['subSample_photoIdentification']!=""){
+                                    $photoIdentification_status="../assets/image/correct.png";
+                                }else{
+                                    $photoIdentification_status="../assets/image/wrong.png";
+                                }
+                                
+                                echo "<tr onclick='window.location.href = \"subSample_edit.php?subSample_id=" . $subsample_row['subSample_id'] . "\";'>";
+                                echo "<td>" . $subsample_row['subSample_id'] . "</td>";
+                                echo "<td><img src='" . $rawSequence_status . "'></td>";
+                                echo "<td><img src='" . $cleanedSequence_status . "'></td>";
+                                echo "<td><img src='" . $photoIdentification_status . "'></td>";
+                                echo "</tr>";
+                            }
+                        ?>
+                    </tbody>
                 </table>
             </div>
         </div>
