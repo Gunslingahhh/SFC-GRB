@@ -53,7 +53,7 @@
             </div>
             <div class="item3">
                 <div id="info-container" class="center">
-                    <p><b>Sampling collection number:</b> <?php echo($collectionNumber) ?></p>
+                    <p><b>Sampling collection number:</b> <?php echo($collectionNumber) ?></p><input class="" type="text" disabled value="Test">
                     <p><b>Location of capture:</b> <?php echo($locationCapture) ?></p>
                     <p><b>GPS of capture:</b> <?php echo($latitude . "&nbsp&nbsp" . $longitude) ?></p>
                     <p><b>Class:</b> <?php echo($class) ?></p>
