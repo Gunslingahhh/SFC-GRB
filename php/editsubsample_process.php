@@ -11,6 +11,7 @@
     include "connection.php";
 
     $id = $_GET['specimen_id'];
+    $subSample_id = $_GET['subSample_id'];
 
     // Check if user_id is set in session
     if (isset($_SESSION['userid'])) {
@@ -103,37 +104,18 @@
             header("Location: forensic_row.php?specimen_id=$id");
         }
 
-        $sql = $conn->prepare("INSERT INTO subSample(
-            subSample_dnaLabName,
-            subSample_dnaLabNumber,
-            subSample_dnaExtractionSize,
-            subSample_pcrLabName,
-            subSample_pcrLabNumber,
-            subSample_primerUsed,
-            subSample_blastResult,
-            subSample_cleaningLabName,
-            subSample_cleaningLabNumber,
-            subSample_rawSequence,
-            subSample_cleanedSequence,
-            subSample_photoIdentification) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)");
-
-        $sql->bind_param("ssisssisssss", 
-            $id,
-            $sampleType,
-            $dateCollected,
-            $storageLocation,
-            $dnaLabName,
-            $dnaLabNumber,
-            $dnaExtractionSize,
-            $pcrLabName,
-            $pcrLabNumber,
-            $primerUsed,
-            $blastResult,
-            $cleaningLabName,
-            $cleaningLabNumber,
-            $raw_target_file,
-            $cleaned_target_file,
-            $photo_target_file);
+        $sql = $conn->prepare(
+            "UPDATE subSample
+            SET subSample_dnaLabName = $dnaLabName,
+                subSample_dnaLabNumber = $dnaLabNumber,
+                subSample_dnaExtractionSize = $dnaExtractionSize,
+                subSample_pcrLabName = $pcrLabName,
+                subSample_pcrLabNumber = $pcrLabNumber,
+                subSample_primerUsed = $primerUsed,
+                subSample_blastResult = $blastResult,
+                subSample_cleaningLabName = $cleaningLabName,
+                subSample_cleaningLabNumber = $cleaningLabNumber,
+            WHERE subSample_id = $subSample_id");
 
         if ($sql->execute()) {
             $_SESSION['message'] = "Task posted successfully!";

@@ -73,7 +73,7 @@
                 <p class="title-text" style="margin-top: 750px;">Attachments</p>
             </div>  
             <div class="item4"><div id="form-container">
-                <form action="editsubsample_process.php?specimen_id=<?php echo $specimen_id ?>" enctype="multipart/form-data" method="POST">
+            <form action="editsubsample_process.php?specimen_id=<?php echo $specimen_id ?>&subSample_id=<?php echo $id ?>" enctype="multipart/form-data" method="POST">
                     <p style="margin-top: 0px; margin-bottom: 10px;"><b>Lab Analyst</b></p>
                     <div class="form-group one-flex">
                         <label class="top-label">Name</label>
