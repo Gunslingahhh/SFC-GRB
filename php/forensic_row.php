@@ -114,7 +114,8 @@
                                     $photoIdentification_status="../assets/image/wrong.png";
                                 }
                                 
-                                echo "<tr onclick='window.location.href = \"editsubsample.php?subSample_id=" . $subsample_row['subSample_id'] . "\";'>";
+                                // echo "<tr onclick='window.location.href = \"editsubsample.php?subSample_id=" . $subsample_row['subSample_id'] . "\";'>";
+                                echo "<tr>";
                                 echo "<td>" . $subsample_row['subSample_id'] . "</td>";
                                 echo "<td><img src='" . $rawSequence_status . "'></td>";
                                 echo "<td><img src='" . $cleanedSequence_status . "'></td>";
