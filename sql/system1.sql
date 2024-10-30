@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 30, 2024 at 06:31 AM
+-- Generation Time: Oct 30, 2024 at 06:47 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -16503,20 +16503,6 @@ CREATE TABLE `specimen` (
   `specimen_sampleMethod` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `specimen`
---
-
-INSERT INTO `specimen` (`specimen_id`, `user_id`, `specimen_collectionNumber`, `specimen_sex`, `specimen_age`, `specimen_weight`, `specimen_isVouchered`, `specimen_storageLocationVoucheredSpecimen`, `specimen_locationCapture`, `specimen_latitude`, `specimen_longitude`, `specimen_class`, `specimen_genus`, `specimen_species`, `specimen_sampleMethod`) VALUES
-(1, 2, 'sdfgfd', 'Female', 'Adult', 345, '0', '', 'dfgdbcv', 'N 4° 32\' 12\'\'', 'W 43° 5\' 3\'\'', 'AVES', 'Acanthogobius', 'abnormis', 'Electric Shock'),
-(2, 2, 'sadadasd', 'Male', 'Adult', 123, '0', 'asddad', 'eqweqweq', 'N -3° 4\' -2\'\'', 'E 3° -2\' -5\'\'', 'CHONDRICHTHYES', 'Chromis', 'acer', 'Handing over / Release'),
-(3, 4, 'sad', 'Male', 'Adult', 1231, '0', '', 'asd', 'N -1° 2\' -2\'\'', 'W 3° -3\' 3\'\'', 'AVES', 'Abyssobrotula', 'abramovi', 'Biomaterial Specimen'),
-(4, 4, 'sad', 'Male', 'Adult', 1231, '0', '', 'asd', 'N -1° 2\' -2\'\'', 'W 3° -3\' 3\'\'', 'AVES', 'Abyssobrotula', 'abramovi', 'Biomaterial Specimen'),
-(5, 4, '5462378', 'Female', 'Adult', 65, '0', 'Locker UiTM', 'Belakang jamban', 'S 12° 32\' 43\'\'', 'E 12° 34\' 45\'\'', 'MAMMALIA', 'Aphaniotis', 'aesculapii', 'Dog Bite'),
-(6, 4, '123', 'Male', 'Larva', 12312312, 'Y', 'werwe', 'Longkang', 'N 123° 312\' 4564\'\'', 'W 65546° 67867\' 32543\'\'', 'REPTILIA', 'Trichopodus', 'schlegelianus', 'Dog Bite'),
-(7, 2, 'vbnvbn', 'Male', 'Larva', 123123, 'No', '', 'vbnvbn', 'S -1° 534534\' 456456\'\'', 'E 54645° 456\' 45646\'\'', 'AMPHIBIA', 'Melogale', 'melanochir', 'Stranded'),
-(8, 12, '69420', 'Male', 'Larva', 45, 'Yes', 'Planet Namek', 'Hutan Amazon', 'N 12° 2\' 3\'\'', 'W 4° 56\' 1\'\'', 'ACTINOPTERYGII', 'Acanthonus', 'absconditus', 'Captivity');
-
 -- --------------------------------------------------------
 
 --
@@ -16543,16 +16529,6 @@ CREATE TABLE `subsample` (
   `subSample_photoIdentification` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `subsample`
---
-
-INSERT INTO `subsample` (`subSample_id`, `specimen_id`, `sampleType_id`, `subSample_dateCollected`, `subSample_storageLocation`, `subSample_dnaLabName`, `subSample_dnaLabNumber`, `subsample_dnaExtractionSize`, `subSample_pcrLabName`, `subSample_pcrLabNumber`, `subSample_primerUsed`, `subSample_blastResult`, `subSample_cleaningLabName`, `subSample_cleaningLabNumber`, `subSample_rawSequence`, `subSample_cleanedSequence`, `subSample_photoIdentification`) VALUES
-(1, 6, 1, '2024-10-05', 'rumah adli', '', '', 0.00, '', '', '', 0.00, '', '', '', '', ''),
-(2, 1, 17, '2024-10-24', 'Locker', '', '', 0.00, '', '', '', 0.00, '', '', '../assets/uploads/raw_sequence/raw_sequence_1_TFt.txt', '../assets/uploads/cleaned_sequence/cleaned_sequence_1_TFt.txt', ''),
-(3, 6, 2, '2024-10-05', 'Stor', '', '', 0.00, '', '', '', 0.00, '', '', '', '', ''),
-(4, 1, 1, '2024-10-03', 'Lopoi', 'Abang Muhammad Hafizhan bin Abang Azman', '0128940329', 12.00, 'Abang Muhammad Hafizhan bin Abang Azman', '0128940329', 'asd', 123.00, 'Abang Muhammad Hafizhan bin Abang Azman', '0128940329', '../assets/uploads/raw_sequence/raw_sequence_1_TLi.txt', '../assets/uploads/cleaned_sequence/cleaned_sequence_1_TLi.txt', '../assets/uploads/photo_identification/photo_identification_1_TLi.png');
-
 -- --------------------------------------------------------
 
 --
@@ -16577,15 +16553,8 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`user_id`, `user_fullname`, `user_username`, `user_password`, `user_profilePicture`, `user_contactNumber`, `user_email`, `user_organization`, `user_type`) VALUES
 (1, 'Encik Admin', 'admin', '8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918', '../assets/uploads/profile_picture/profile_picture_user_1.jpg', '0128940329', 'abgmhafizhan1908@gmail.com', 'eqwesad', 'Admin'),
-(2, 'Encik User', 'user', '04f8996da763b7a969b1028ee3007569eaf3a635486ddab211d512c85b9df8fb', '../assets/uploads/profile_picture/profile_picture_user_2.jpg', '', '', '', 'User'),
-(3, 'Encik Forensic', 'forensic', '59827482d3334dd54af5e73bcf260bf141184c1bc795bf455c580566f4ec0376', '../assets/uploads/profile_picture/profile_picture_user_3.png', '', '', '', 'Forensic'),
-(4, 'Mr Nabil', 'nabil', 'a56c36f9095e3a50d3c239f13563afc9cccc93bfef0d469e7dbd4977a68ceef6', '../assets/uploads/profile_picture/profile_picture_user_4.png', 'a', 'ds', 'asd', 'User'),
-(7, 'Gunslebewww', 'guns', '30cf1c20022cf1959929016d444bf9ff202382c26b01631ec8783c9034bcde98', NULL, '', '', '', ''),
-(8, 's', 'asss', '3c7334cb1996c6d22018859544dc862656c95c110b497e5c4a2c8f2b5f321ae8', NULL, '', '', '', 'Admin'),
-(9, 'sqwe', 'qdwasdf', '004eab5dfd6a363c91bab6b0c55842cab074d7354fd359ba6c3b1705a64b6826', NULL, '', '', '', 'Forensic'),
-(10, 'Gunslebewww', 'adada', '898f2c46625977cd7afc396a38ee30ca6074e63824e334f6b046c42b70f5d4ac', NULL, '', '', '', 'Forensic'),
-(11, 'adli', 'adli', 'c67e9a7faa9b4025db6b162bf1087dffd45fd2d7f995356bb41488273dbcd970', NULL, '', '', '', 'Forensic'),
-(12, 'goku bin gohan', 'Goku', 'a2bc4babd6f52fc0691db56322ae54f295586c839a9b370e74d58a7d2f9abf82', '', '999', 'goku@gmail.com', 'Saiyan', 'User');
+(2, 'Encik User', 'user', '04f8996da763b7a969b1028ee3007569eaf3a635486ddab211d512c85b9df8fb', '../assets/uploads/profile_picture/profile_picture_user_2.png', '', '', '', 'User'),
+(3, 'Encik Forensic', 'forensic', '59827482d3334dd54af5e73bcf260bf141184c1bc795bf455c580566f4ec0376', '../assets/uploads/profile_picture/profile_picture_user_3.png', '', '', '', 'Forensic');
 
 --
 -- Indexes for dumped tables
@@ -16644,13 +16613,13 @@ ALTER TABLE `species`
 -- AUTO_INCREMENT for table `specimen`
 --
 ALTER TABLE `specimen`
-  MODIFY `specimen_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `specimen_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `subsample`
 --
 ALTER TABLE `subsample`
-  MODIFY `subSample_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `subSample_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `user`
