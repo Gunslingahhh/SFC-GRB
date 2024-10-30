@@ -1,0 +1,7 @@
+Frontend Development	RM28,000
+Backend Development	RM34,000
+Infrastructure Costs	RM6,000
+Training Costs	        RM2,000
+Contingency Fund	RM2,000
+Additional Enhancements	RM10,000
+Total	                RM72,000 

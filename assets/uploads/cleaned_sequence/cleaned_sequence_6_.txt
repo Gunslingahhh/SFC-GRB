@@ -1,0 +1,14 @@
+Check for special characters
+Count the occurence of digits in the array
+Make sure bracket cover 3 digit
+
+if pattern.test(phone)==true:
+	return false;
+if pattern.test(phone)==false:
+	for i=0; i<phone.length; i++:
+		if phone[i] is digit:
+			countDigit+=;
+	if countDigit<10 or countDigit>11:
+		return false;
+	if countDigit==10:
+	if countDigit==11:
