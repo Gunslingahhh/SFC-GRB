@@ -22,31 +22,31 @@
                     $species_data = [];
 
                     // Fetch all distinct species classes
-                    $stmt = $conn->prepare("SELECT DISTINCT species_class FROM species");
+                    $stmt = $conn->prepare("SELECT DISTINCT specimen_class FROM specimen");
                     $stmt->execute();
                     $result = $stmt->get_result();
 
                     while ($row = $result->fetch_assoc()) {
-                        $species_class = $row['species_class'];
+                        $specimen_class = $row['specimen_class'];
 
                         // Count total species for the current species class
-                        $count_stmt = $conn->prepare("SELECT COUNT(*) AS total FROM species WHERE species_class = ?");
-                        $count_stmt->bind_param("s", $species_class);
+                        $count_stmt = $conn->prepare("SELECT COUNT(*) AS total FROM specimen WHERE specimen_class = ?");
+                        $count_stmt->bind_param("s", $specimen_class);
                         $count_stmt->execute();
                         $count_result = $count_stmt->get_result();
                         $count_row = $count_result->fetch_assoc();
-                        $total_species = $count_row['total'];
+                        $total_specimen = $count_row['total'];
 
                         // Add species class and count to the 2D array
                         $species_data[] = [
-                            'species_class' => $species_class,
-                            'total_species' => $total_species
+                            'specimen_class' => $specimen_class,
+                            'total_specimen' => $total_specimen
                         ];
                     }
 
                     echo '<div id="information-container">';
                     foreach ($species_data as $data) {
-                        echo '<div class="flex-item">' . $data['species_class'] . "<br><br>" . "<b>" . $data['total_species'] ."</b>" . '</div>';
+                        echo '<div class="flex-item">' . $data['specimen_class'] . "<br><br>" . "<b>" . $data['total_specimen'] ."</b>" . '</div>';
                     }
                     echo '</div>';
 

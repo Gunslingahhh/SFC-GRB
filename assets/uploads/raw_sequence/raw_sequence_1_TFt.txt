@@ -1,1 +1,0 @@
-https://render.albiononline.com/v1/guild/logo.png?schema=SCHEMA_02&primarySchemaColor=3&secondarySchemaColor=1&symbol=15&size=510&symbolColor=5&type=PASSIVE_GUILD_UNRANKED&symbolScale=1.2

@@ -158,9 +158,9 @@
                                 </select> 
                         </div>
                         <div class="form-group three-flex">
-                            <label class="top-label">Age</label>
+                            <label class="top-label">Stage</label>
                                 <select required name="sample_age" class="small-input">
-                                    <option value=""> Age </option>
+                                    <option value=""> Stage </option>
                                     <option value="Subadult">SUBADULT</option>
                                     <option value="Juvenile">JUVENILE</option>
                                     <option value="Adult">ADULT</option>
