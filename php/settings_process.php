@@ -45,17 +45,20 @@
 
                     header("Location: settings.php");
                     exit();
-                } else {
+                } 
+                else {
                     echo "Error uploading file.";
                     header("Location: settings.php");
                     exit();
                 }
-            } else {
+            } 
+            else {
                 echo "Invalid file type. Only JPG and PNG are allowed.";
                 header("Location: settings.php");
                 exit();
             }
-        } else {
+        } 
+        else {
             // No image selected
             $target_file = "";
             $data = array(
