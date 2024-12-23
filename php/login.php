@@ -1,29 +1,46 @@
 <?php
-    // Start the session
     session_start();
+    // Include the database connection file
+    include "connection.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="../css/login.css">
-</head>
-<body>
-    <div id="body-container" class="center">
-        <div id="header-bar"></div>
-        <h1>Sarawak Forestry Corporation<br>Genetic Resource Bank</h1>
-        <div id="login-container">
-            <a href="../index.php"><img src="../assets/image/logo.png" alt="SFC Logo"></a>
-            <h2>Welcome to SFC-GRB</h2>
-            <form action="login_process.php" method="POST">
-                <input type="text" name="username" id="" placeholder="Username" required>
-                <input type="password" name="password" id="" placeholder="Password" required>
-                <input type="submit" value="Log In">
-            </form>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>SFC-GRB System</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/styles.css" rel="stylesheet">
+        <script src="../js/bootstrap.bundle.min.js"></script>
+        <script src="../adminkit-main/static/js/app.js"></script>
+    </head>
+    <body>
+        <div class="mt-5">
+            <div class="d-flex w-100 bg-light border-0">
+                <div class="w-50 mt-5 main-color p-5 text-white text-center d-flex align-items-center" style="min-height: 100px;">
+                    <h2 class="card-title d-flex flex-column text-white justify-content-center">
+                        <span>Sarawak Forestry Corporation</span>
+                        <span>Genetic Resource Bank</span>
+                    </h2>
+                </div>
+                <div class="w-50 mt-5 main-color p-5 text-white text-center d-flex justify-content-center">
+                    <div class="w-50 card bg-white"> <!-- body-container-card-->
+                        <div class="card-body"> <!-- body-container-card-body -->
+                            <div class="d-flex flex-column justify-content-center align-items-center">
+                                <a href="../index.php" class="d-flex justify-content-center">
+                                    <img src="../assets/image/logo.png" width="20%" alt="Your Logo Alt Text">
+                                </a>
+                                <form action="login_process.php" class="p-3">
+                                    <p class="text-center fw-bold">Welcome to SFC-GRB</p>
+                                    <input type="text" class="form-control mt-2 text-center" placeholder="Username">
+                                    <input type="text" class="form-control mt-2 text-center" placeholder="Password">
+                                    <button type="submit" class="form-control mt-4 text-center text-bg-primary">Log In</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div id="footer-bar"></div>
-    </div>
-</body>
+    </body>
 </html>
