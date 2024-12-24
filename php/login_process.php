@@ -43,6 +43,7 @@
         }
     }
     else{
+        $_SESSION['message'] = "Please re-enter your login information!";
         header("Location: login.php");
         exit();
     }

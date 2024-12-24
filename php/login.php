@@ -17,7 +17,7 @@
     <body>
         <div class="mt-5">
             <div class="d-flex w-100 bg-light border-0">
-                <div class="w-50 mt-5 main-color p-5 text-white text-center d-flex align-items-center" style="min-height: 100px;">
+                <div class="w-50 mt-5 main-color p-5 text-white text-center d-flex justify-content-center align-items-center" style="min-height: 100px;">
                     <h2 class="card-title d-flex flex-column text-white justify-content-center">
                         <span>Sarawak Forestry Corporation</span>
                         <span>Genetic Resource Bank</span>
@@ -30,10 +30,16 @@
                                 <a href="../index.php" class="d-flex justify-content-center">
                                     <img src="../assets/image/logo.png" width="20%" alt="Your Logo Alt Text">
                                 </a>
-                                <form action="login_process.php" class="p-3">
+                                <form action="login_process.php" method="POST" class="p-3">
                                     <p class="text-center fw-bold">Welcome to SFC-GRB</p>
-                                    <input type="text" class="form-control mt-2 text-center" placeholder="Username">
-                                    <input type="text" class="form-control mt-2 text-center" placeholder="Password">
+                                    <input type="text" class="form-control mt-2 text-center" name="username" placeholder="Username">
+                                    <input type="text" class="form-control mt-2 text-center" name="password" placeholder="Password">
+                                    <?php
+                                        if (isset($_SESSION['message'])) {
+                                            echo "<div class='alert alert-danger mt-3 text-center'>" . $_SESSION['message'] . "</div>";
+                                            unset($_SESSION['message']);
+                                        }
+                                    ?>
                                     <button type="submit" class="form-control mt-4 text-center text-bg-primary">Log In</button>
                                 </form>
                             </div>

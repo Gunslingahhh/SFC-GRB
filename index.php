@@ -15,7 +15,7 @@
         <script src="adminkit-main/static/js/app.js"></script>
     </head>
     <body>
-        <?php include "php/topnav.php";
+        <?php include "php/index_header.php";
 			$species_data = [];
 
 			// Fetch all distinct species classes
