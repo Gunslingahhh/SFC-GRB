@@ -31,7 +31,38 @@
             <div class="row flex-nowrap">
                 <?php include "sidenav.php"; ?> 
                 <main class="col ps-md-0 main-content">
-                    <?php include "topnav.php"; ?> 
+                    <?php include "topnav.php"; ?>
+
+                    <table class="table table-striped table-hover mt-5">
+                        <thead>
+                            <tr>
+                                <th>User ID</th>
+                                <th>Username</th>
+                                <th>Full Name</th>
+                                <th>Email</th>
+                                <th>Role</th>
+                                <th>Profile Picture</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        <?php
+                        $detail_check = $conn->prepare("SELECT * FROM user");
+                        $detail_check->execute();
+                        $detail_result = $detail_check->get_result();
+                        
+                        while ($user_row = $detail_result->fetch_assoc()) {
+                            echo "<tr onclick='window.location.href = \"admin_row.php?user_id=" . $user_row['user_id'] . "\";'>";
+                            echo "<td>" . $user_row['user_id'] . "</td>";
+                            echo "<td>" . $user_row['user_username'] . "</td>";
+                            echo "<td>" . $user_row['user_fullname'] . "</td>";
+                            echo "<td>" . $user_row['user_email'] . "</td>";
+                            echo "<td>" . $user_row['user_type'] . "</td>";
+                            echo "<td><img src='" . $user_row['user_profilePicture'] . "' width='30'></td>";
+                            echo "</tr>";
+                        }
+                        ?>
+                        </tbody>
+                    </table>
                 </main>
             </div>
         </div>
