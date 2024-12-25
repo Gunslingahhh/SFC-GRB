@@ -31,7 +31,17 @@
             <div class="row flex-nowrap">
                 <?php include "sidenav.php"; ?> 
                 <main class="col ps-md-0 main-content">
-                    <?php include "topnav.php"; ?>
+                <?php
+                    $buttonText = "Add specimen";
+                    $buttonLink = "addspecimen.php";
+                    $searchPlaceholder = "Search for specimen";
+                    $searchAction = "page1_search.php";
+                    $navItems = [
+                        ['text' => 'Home', 'href' => 'index.php'],
+                        ['text' => 'About', 'href' => 'about.php'],
+                    ];
+                    include "topnav.php";
+                ?>
 
                     <table class="table table-striped table-hover mt-5">
                         <thead>
