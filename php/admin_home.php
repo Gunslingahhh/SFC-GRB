@@ -31,7 +31,13 @@
             <div class="row flex-nowrap">
                 <?php include "sidenav.php"; ?> 
                 <main class="col ps-md-0 main-content">
-                    <?php include "topnav.php"; ?>
+                <?php
+                    $buttonText = "Add user +";
+                    $buttonLink = "adduser.php";
+                    $searchPlaceholder = "Search for user";
+                    $searchAction = "#";
+                    include "topnav.php";
+                ?>
 
                     <table class="table table-striped table-hover mt-5">
                         <thead>

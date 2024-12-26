@@ -32,14 +32,10 @@
                 <?php include "sidenav.php"; ?> 
                 <main class="col ps-md-0 main-content">
                 <?php
-                    $buttonText = "Add specimen";
+                    $buttonText = "Add specimen +";
                     $buttonLink = "addspecimen.php";
                     $searchPlaceholder = "Search for specimen";
-                    $searchAction = "page1_search.php";
-                    $navItems = [
-                        ['text' => 'Home', 'href' => 'index.php'],
-                        ['text' => 'About', 'href' => 'about.php'],
-                    ];
+                    $searchAction = "#";
                     include "topnav.php";
                 ?>
 

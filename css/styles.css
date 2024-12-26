@@ -9,3 +9,29 @@
 .pie-chart-size{
     width: 100%;
 }
+
+#button-container{
+    display: inline-block;
+    width: 59px;
+    height: 29px;
+    background-color: red;
+    position: relative;
+    top: 10px;
+    border-radius: 20px;
+    border: 1px solid black;
+}
+
+#button-container:hover{
+    cursor: pointer;
+}
+
+#button-button{
+    position: relative;
+    width: 34px;
+    height: 34px;
+    background-color: white;
+    border-radius: 35px;
+    top: -3px;
+    left: -2px;
+    border: 1px solid black;
+}
