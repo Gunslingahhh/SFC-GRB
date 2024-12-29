@@ -31,43 +31,45 @@
             <div class="row flex-nowrap">
                 <?php include "sidenav.php"; ?> 
                 <main class="col ps-md-0 main-content">
-                <?php
-                    $buttonText = "Add specimen +";
-                    $buttonLink = "addspecimen.php";
-                    $searchPlaceholder = "Search for specimen";
-                    $searchAction = "#";
-                    include "topnav.php";
-                ?>
+                    <div class="ms-3">
+                        <?php
+                            $buttonText = "Add specimen +";
+                            $buttonLink = "addspecimen.php";
+                            $searchPlaceholder = "Search for specimen";
+                            $searchAction = "#";
+                            include "topnav.php";
+                        ?>
 
-                    <table class="table table-striped table-hover mt-5">
-                        <thead>
-                            <tr>
-                                <th>Specimen ID</th>
-                                <th>Field Sampling Collection Number</th>
-                                <th>Class</th>
-                                <th>Genus</th>
-                                <th>Species</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php
-                            $userid = $_SESSION['userid'];
-                            $detail_check = $conn->prepare("SELECT specimen_id, specimen_collectionNumber, specimen_class, specimen_genus, specimen_species FROM specimen WHERE user_id = $userid");
-                            $detail_check->execute();
-                            $detail_result = $detail_check->get_result();
-                            
-                            while ($user_row = $detail_result->fetch_assoc()) {
-                                echo "<tr onclick='window.location.href = \"admin_row.php?user_id=" . $user_row['user_id'] . "\";'>";
-                                echo "<td>" . $user_row['user_id'] . "</td>";
-                                echo "<td>" . $user_row['user_username'] . "</td>";
-                                echo "<td>" . $user_row['user_fullname'] . "</td>";
-                                echo "<td>" . $user_row['user_email'] . "</td>";
-                                echo "<td>" . $user_row['user_type'] . "</td>";
-                                echo "</tr>";
-                            }
-                            ?>
-                        </tbody>
-                    </table>
+                        <table class="table table-striped table-hover mt-5">
+                            <thead>
+                                <tr>
+                                    <th>Specimen ID</th>
+                                    <th>Field Sampling Collection Number</th>
+                                    <th>Class</th>
+                                    <th>Genus</th>
+                                    <th>Species</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php
+                                $userid = $_SESSION['userid'];
+                                $detail_check = $conn->prepare("SELECT specimen_id, specimen_collectionNumber, specimen_class, specimen_genus, specimen_species FROM specimen WHERE user_id = $userid");
+                                $detail_check->execute();
+                                $detail_result = $detail_check->get_result();
+                                
+                                while ($user_row = $detail_result->fetch_assoc()) {
+                                    echo "<tr onclick='window.location.href = \"admin_row.php?user_id=" . $user_row['user_id'] . "\";'>";
+                                    echo "<td>" . $user_row['user_id'] . "</td>";
+                                    echo "<td>" . $user_row['user_username'] . "</td>";
+                                    echo "<td>" . $user_row['user_fullname'] . "</td>";
+                                    echo "<td>" . $user_row['user_email'] . "</td>";
+                                    echo "<td>" . $user_row['user_type'] . "</td>";
+                                    echo "</tr>";
+                                }
+                                ?>
+                            </tbody>
+                        </table>
+                    </div>
                 </main>
             </div>
         </div>

@@ -47,22 +47,36 @@
                             <p>User login information</p>
                         </div>
                         <div class="w-75">
-                            <p class="mt-3">Full name <input type="text" class="form-control border border-2 border-dark w-50" name="" placeholder="Name"></p>
-                            <p class="mt-3">Username <input type="text" class="form-control border border-2 border-dark w-50" name="" placeholder="Username"></p>
-                            <p class="mt-3">Password <input type="text" class="form-control border border-2 border-dark w-50" name="" placeholder="Password"></p>
+                            <p class="mt-3">Full name <input type="text" class="form-control border border-2 border-dark w-50" name="fullname" placeholder="Name" required></p>
+                            <p class="mt-3">Username <input type="text" class="form-control border border-2 border-dark w-50" name="username" placeholder="Username" required></p>
+                            <p class="mt-3">Password <input type="text" class="form-control border border-2 border-dark w-50" name="password" placeholder="Password" required></p>
 
                             <div><p>Stage
-                                <select required name="sample_genus" id="sample_genus" name="sample_age" class="form-control form-control-sm border border-2 border-dark" style="width: 200px;">
-                                <option value=""> Role </option>
+                                <select required name="user_role" id="sample_genus" name="sample_age" class="form-control form-control border border-2 border-dark w-50">
+                                <option value=""> Select a role </option>
                                 <option value="User">USER</option>
                                 <option value="Forensic">FORENSIC</option>
                                 <option value="Admin">ADMIN</option>
                                 </select></p>
                             </div>
-                            <input type="submit" class="btn bg-primary text-white">
+                            <?php
+                                if (isset($_SESSION['error'])) {
+                                    echo "<div class='alert alert-danger mt-3 text-center w-50'>" . $_SESSION['error'] . "</div>";
+                                    unset($_SESSION['error']);
+                                }
+
+                                if (isset($_SESSION['message'])) {
+                                    echo "<div class='alert alert-primary mt-3 text-center w-50'>" . $_SESSION['message'] . "</div>";
+                                    unset($_SESSION['message']);
+                                }
+                            ?>
+                            <div class="d-flex justify-content-center w-50">
+                                <input type="submit" class="btn bg-primary text-white">
+                            <div>
                         </div>
                     </div>
                 </form>
+                    
             </main>
             </div>
         </div>

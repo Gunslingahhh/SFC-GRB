@@ -51,7 +51,7 @@
 					<div class="card-body main-color d-flex justify-content-center p-4"> <!-- background-container -->
 						<div class="card w-75 d-flex justify-content-center">
 							<div class="card-body d-flex flex-column justify-content-center align-items-center">
-								<div class="d-flex justify-content-center w-75">
+								<div class="d-flex justify-content-center w-100">
 									<canvas id="chartjs-dashboard-pie"></canvas>
 								</div>
 							</div>
@@ -109,13 +109,14 @@
 							}]
 						},
 						options: {
-							responsive: true,
-							maintainAspectRatio: true,
-							legend: {
-								display: false // Display the legend (you can customize its position)
-							},
-							cutoutPercentage: 0 // Make it a full pie chart
-						}
+						responsive: true,
+						maintainAspectRatio: true,
+						legend: {
+							display: true,
+							position: 'right' // Change this to 'top', 'left', 'right', or 'chartArea'
+						},
+						cutoutPercentage: 0
+					}
 					});
 				});
 			</script>

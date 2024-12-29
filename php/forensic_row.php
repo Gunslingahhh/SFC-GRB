@@ -3,23 +3,30 @@
     session_start();
 
     // Check if the user is logged in
-    if (!isset($_SESSION['userid'])) {
+    if (!isset($_SESSION['username'])) {
         header("Location: ../index.php");
         exit();
     }
 
     include "connection.php";
 
-    $userid = $_SESSION['userid'];
+    $id = $_GET['specimen_id'];
 
-    $detail_check = $conn->prepare("SELECT user_contactNumber, user_email, user_organization FROM user WHERE user_id = $userid");
+    $detail_check = $conn->prepare("SELECT * FROM specimen WHERE specimen_id = $id");
     $detail_check->execute();
     $detail_result = $detail_check->get_result();
-    
+
     while ($user_row = $detail_result->fetch_assoc()) {
-        $contactNumber = $user_row['user_contactNumber'];
-        $email = $user_row['user_email'];
-        $organization = $user_row['user_organization'];
+        $collectionNumber=$user_row['specimen_collectionNumber'];
+        $sex=$user_row['specimen_sex'];
+        $age=$user_row['specimen_age'];
+        $weight=$user_row['specimen_weight'];
+        $isVouchered=$user_row['specimen_isVouchered'];
+        $storageLocationVoucheredSpecimen=$user_row['specimen_storageLocationVoucheredSpecimen'];
+        $class=$user_row['specimen_class'];
+        $genus=$user_row['specimen_genus'];
+        $species=$user_row['specimen_species'];
+        $sampleMethod=$user_row['specimen_sampleMethod'];
     }
 ?>
 
@@ -39,7 +46,42 @@
                     include "sidenav.php";
                 ?>
             <main class="col ps-md-0 main-content">
-                <p>Yo</p>    
+                <div class="ms-3">
+                    <h2 class="fw-bold">SFC-GRB-<?php echo($id) ?></h2>
+                    
+                    <table class="table table-bordered mt-5">
+                        <thead class="">
+                            <tr>
+                                <th>Specimen ID</th>
+                                <th>Class</th>
+                                <th>Genus</th>
+                                <th>Species</th>
+                                <th>Name</th>
+                                <th>Contact Number</th>
+                                <th>E-mail</th>
+                                <th>E-mail</th>
+                                <th>E-mail</th>
+                                <th>E-mail</th>
+                                <th>E-mail</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Testing</td>
+                                <td>Testing</td>
+                                <td>Testing</td>
+                                <td>Testing</td>
+                                <td>Testing</td>
+                                <td>Testing</td>
+                                <td>Testing</td>
+                                <td>Testing</td>
+                                <td>Testing</td>
+                                <td>Testing</td>
+                                <td>Testing</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </main>
             </div>
         </div>

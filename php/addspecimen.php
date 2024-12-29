@@ -85,7 +85,7 @@ $conn->close();
                             <input type="hidden" id="isVouchered" name="isVouchered" value="No">
                         </div>
                             
-                        <p class="mt-3">Storage location of vouchered specimen <input type="text" class="form-control border border-2 border-dark w-50" id="storage_location" name="storage_location" value="" placeholder="Sampling collection number" disabled></p>
+                        <p class="mt-3">Storage location of vouchered specimen <input type="text" class="form-control border border-2 border-dark w-50" id="storage_location" name="storage_location" value="" placeholder="Storage location of vouchered specimen" disabled></p>
 
                         <div class="mb-3">
                             <label class="form-label">Sample Method:</label><br>
