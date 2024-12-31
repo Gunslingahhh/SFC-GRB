@@ -32,8 +32,8 @@
                                 </a>
                                 <form action="login_process.php" method="POST" class="p-3">
                                     <p class="text-center fw-bold">Welcome to SFC-GRB</p>
-                                    <input type="text" class="form-control mt-2 text-center" name="username" placeholder="Username">
-                                    <input type="password" class="form-control mt-2 text-center" name="password" placeholder="Password">
+                                    <input type="text" class="border-1 border-dark form-control mt-2 text-center" name="username" placeholder="Username">
+                                    <input type="password" class="border-1 border-dark form-control mt-2 text-center" name="password" placeholder="Password">
                                     <?php
                                         if (isset($_SESSION['message'])) {
                                             echo "<div class='alert alert-danger mt-3 text-center'>" . $_SESSION['message'] . "</div>";

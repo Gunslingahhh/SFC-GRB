@@ -40,9 +40,9 @@
                             include "topnav.php";
                         ?>
 
-                        <table class="table table-striped table-hover mt-5">
+                        <table class="table table-bordered table-striped table-hover mt-5">
                             <thead>
-                                <tr>
+                                <tr class="text-center">
                                     <th>Specimen ID</th>
                                     <th>Field Sampling Collection Number</th>
                                     <th>Class</th>
@@ -58,7 +58,7 @@
                                 $detail_result = $detail_check->get_result();
                                 
                                 while ($user_row = $detail_result->fetch_assoc()) {
-                                    echo "<tr onclick='window.location.href = \"admin_row.php?user_id=" . $user_row['user_id'] . "\";'>";
+                                    echo "<tr role='button' class='text-center' onclick='window.location.href = \"admin_row.php?user_id=" . $user_row['user_id'] . "\";'>";
                                     echo "<td>" . $user_row['user_id'] . "</td>";
                                     echo "<td>" . $user_row['user_username'] . "</td>";
                                     echo "<td>" . $user_row['user_fullname'] . "</td>";

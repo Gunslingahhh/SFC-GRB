@@ -10,7 +10,7 @@
                 <button type="button" class="btn btn-primary"><?php echo $buttonText; ?></button>
             </a>
             <form class="d-flex me-2" role="search" action="<?php echo $searchAction; ?>" method="GET">
-                <input class="form-control me-2" type="search" name="search" placeholder="<?php echo $searchPlaceholder; ?>" aria-label="Search">
+                <input class="form-control me-2 border-1 border-dark" type="search" name="search" placeholder="<?php echo $searchPlaceholder; ?>" aria-label="Search">
                 <button class="btn btn-outline-success" type="submit">Search</button>
             </form>
         </div>

@@ -56,9 +56,9 @@
                             <p class="fw-bold"><span class="text-secondary">Organization: </span><?php echo($organization) ?></p>
                         </div>
                     </div>
-                    <table class="table table-striped w-75 h-100 ms-4">
+                    <table class="table table-bordered table-striped w-75 h-100 ms-4">
                         <thead>
-                            <tr>
+                            <tr class="text-center">
                                 <th>Specimen ID</th>
                                 <th>Class</th>
                                 <th>Genus</th>
@@ -72,7 +72,7 @@
                                 $result = $sql->get_result();
                                 
                                 while ($specimen_row = $result->fetch_assoc()) {
-                                    echo "<tr>";
+                                    echo "<tr class='text-center'>";
                                     echo "<td>" . $specimen_row['specimen_id'] . "</td>";
                                     echo "<td>" . $specimen_row['specimen_class'] . "</td>";
                                     echo "<td>" . $specimen_row['specimen_genus'] . "</td>";

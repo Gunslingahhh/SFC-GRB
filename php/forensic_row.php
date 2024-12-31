@@ -19,7 +19,7 @@
     while ($user_row = $detail_result->fetch_assoc()) {
         $collectionNumber=$user_row['specimen_collectionNumber'];
         $sex=$user_row['specimen_sex'];
-        $age=$user_row['specimen_age'];
+        $stage=$user_row['specimen_stage'];
         $weight=$user_row['specimen_weight'];
         $isVouchered=$user_row['specimen_isVouchered'];
         $storageLocationVoucheredSpecimen=$user_row['specimen_storageLocationVoucheredSpecimen'];
@@ -47,38 +47,93 @@
                 ?>
             <main class="col ps-md-0 main-content">
                 <div class="ms-3">
+                    <?php
+                        $buttonText = "Add subsample +";
+                        $buttonLink = "addsubsample.php";
+                        $searchPlaceholder = "Search for subsample";
+                        $searchAction = "#";
+                        include "topnav.php";
+                    ?>
                     <h2 class="fw-bold">SFC-GRB-<?php echo($id) ?></h2>
                     
                     <table class="table table-bordered mt-5">
-                        <thead class="">
-                            <tr>
-                                <th>Specimen ID</th>
+                        <thead>
+                            <tr class="text-center">
+                                <th>Collection Number</th>
+                                <th>Sex</th>
+                                <th>Stage</th>
+                                <th>Weight</th>
+                                <th>Vouchered?</th>
+                                <th>Storage location of vouchered specimen</th>
                                 <th>Class</th>
                                 <th>Genus</th>
                                 <th>Species</th>
-                                <th>Name</th>
-                                <th>Contact Number</th>
-                                <th>E-mail</th>
-                                <th>E-mail</th>
-                                <th>E-mail</th>
-                                <th>E-mail</th>
-                                <th>E-mail</th>
+                                <th>Sample Method</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>Testing</td>
-                                <td>Testing</td>
-                                <td>Testing</td>
-                                <td>Testing</td>
-                                <td>Testing</td>
-                                <td>Testing</td>
-                                <td>Testing</td>
-                                <td>Testing</td>
-                                <td>Testing</td>
-                                <td>Testing</td>
-                                <td>Testing</td>
+                            <tr class="text-center">
+                                <td><?php echo $collectionNumber ?></td>
+                                <td><?php echo $sex ?></td>
+                                <td><?php echo $stage ?></td>
+                                <td><?php echo $weight ?></td>
+                                <td><?php echo $isVouchered ?></td>
+                                <td><?php echo $storageLocationVoucheredSpecimen ?></td>
+                                <td><?php echo $class ?></td>
+                                <td><?php echo $genus ?></td>
+                                <td><?php echo $species ?></td>
+                                <td><?php echo $sampleMethod ?></td>
                             </tr>
+                        </tbody>
+                    </table>
+
+                    <table class="table table-striped table-bordered table-hover mt-5">
+                        <thead class="table-dark">
+                            <tr class="text-center">
+                                <th>Subsample ID</th>
+                                <th>Raw Sequence</th>
+                                <th>Cleaned Sequence</th>
+                                <th>Photo Identification</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                                $sql = $conn->prepare("SELECT subSample_id, subSample_rawSequence, subSample_cleanedSequence, subSample_photoIdentification FROM subSample WHERE specimen_id = $id");
+                                $sql->execute();
+                                $result = $sql->get_result();
+
+                                $rawSequence_status="../assets/image/wrong.png";
+                                $cleanedSequence_status="../assets/image/wrong.png";
+                                $photoIdentification_status="../assets/image/wrong.png";
+
+                                while ($subsample_row = $result->fetch_assoc()){
+                                    if($subsample_row['subSample_rawSequence']!=""){
+                                        $rawSequence_status="../assets/image/correct.png";
+                                    }else{
+                                        $rawSequence_status="../assets/image/wrong.png";
+                                    }
+                                    
+                                    if($subsample_row['subSample_cleanedSequence']!=""){
+                                        $cleanedSequence_status="../assets/image/correct.png";
+                                    }else{
+                                        $cleanedSequence_status="../assets/image/wrong.png";
+                                    }
+        
+                                    if($subsample_row['subSample_photoIdentification']!=""){
+                                        $photoIdentification_status="../assets/image/correct.png";
+                                    }else{
+                                        $photoIdentification_status="../assets/image/wrong.png";
+                                    }
+                                    
+                                    // echo "<tr onclick='window.location.href = \"editsubsample.php?subSample_id=" . $subsample_row['subSample_id'] . "\";'>";
+                                    echo "<tr role='button' onclick='window.location.href = \"editsubsample.php?subSample_id=" . $subsample_row['subSample_id'] . "\";'>";
+                                    echo "<td class='text-center'>" . $subsample_row['subSample_id'] . "</td>";
+                                    echo "<td class='text-center'><img class='img-fluid rounded-circle' width='15px' src='" . $rawSequence_status . "'></td>";
+                                    echo "<td class='text-center'><img class='img-fluid rounded-circle' width='15px' src='" . $cleanedSequence_status . "'></td>";
+                                    echo "<td class='text-center'><img class='img-fluid rounded-circle' width='15px' src='" . $photoIdentification_status . "'></td>";
+                                    echo "</tr>";
+                                }
+                            ?>
                         </tbody>
                     </table>
                 </div>

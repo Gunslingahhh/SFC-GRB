@@ -85,53 +85,53 @@ $conn->close();
                             <input type="hidden" id="isVouchered" name="isVouchered" value="No">
                         </div>
                             
-                        <p class="mt-3">Storage location of vouchered specimen <input type="text" class="form-control border border-2 border-dark w-50" id="storage_location" name="storage_location" value="" placeholder="Storage location of vouchered specimen" disabled></p>
+                        <p class="mt-3">Storage location of vouchered specimen <input type="text" class="form-control border border-1 border-dark w-50" id="storage_location" name="storage_location" value="" placeholder="Storage location of vouchered specimen" disabled></p>
 
                         <div class="mb-3">
                             <label class="form-label">Sample Method:</label><br>
                             <div class="row">
                                 <div class="col-md-6"> 
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="sample_method" id="handingOver" value="Handing over / Release" required>
+                                        <input class="form-check-input border-1 border-dark" type="radio" name="sample_method" id="handingOver" value="Handing over / Release" required>
                                         <label class="form-check-label" for="handingOver">Handing over / Release</label>
                                     </div>
                                 </div>
                                 <div class="col-md-6"> 
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="sample_method" id="confiscated" value="Confiscated" required>
+                                        <input class="form-check-input border-1 border-dark" type="radio" name="sample_method" id="confiscated" value="Confiscated" required>
                                         <label class="form-check-label" for="confiscated">Confiscated</label>
                                         </div>
                                     </div>
                                     <div class="col-md-6"> <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="sample_method" id="cases" value="Cases" required>
+                                        <input class="form-check-input border-1 border-dark" type="radio" name="sample_method" id="cases" value="Cases" required>
                                         <label class="form-check-label" for="cases">Cases</label>
                                     </div></div>
                                     <div class="col-md-6"> <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="sample_method" id="stranded" value="Stranded" required>
+                                        <input class="form-check-input border-1 border-dark" type="radio" name="sample_method" id="stranded" value="Stranded" required>
                                         <label class="form-check-label" for="stranded">Stranded</label>
                                     </div></div>
                                     <div class="col-md-6"> <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="sample_method" id="fishNet" value="Caught in Fish Net" required>
+                                        <input class="form-check-input border-1 border-dark" type="radio" name="sample_method" id="fishNet" value="Caught in Fish Net" required>
                                         <label class="form-check-label" for="fishNet">Caught in Fish Net</label>
                                     </div></div>
                                     <div class="col-md-6"> <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="sample_method" id="captivity" value="Captivity" required>
+                                        <input class="form-check-input border-1 border-dark" type="radio" name="sample_method" id="captivity" value="Captivity" required>
                                         <label class="form-check-label" for="captivity">Captivity</label>
                                     </div></div>
                                     <div class="col-md-6"> <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="sample_method" id="roadkill" value="Roadkill" required>
+                                        <input class="form-check-input border-1 border-dark" type="radio" name="sample_method" id="roadkill" value="Roadkill" required>
                                         <label class="form-check-label" for="roadkill">Roadkill</label>
                                     </div></div>
                                     <div class="col-md-6"> <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="sample_method" id="electricShock" value="Electric Shock" required>
+                                        <input class="form-check-input border-1 border-dark" type="radio" name="sample_method" id="electricShock" value="Electric Shock" required>
                                         <label class="form-check-label" for="electricShock">Electric Shock</label>
                                     </div></div>
                                     <div class="col-md-6"> <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="sample_method" id="dogBite" value="Dog Bite" required>
+                                        <input class="form-check-input border-1 border-dark" type="radio" name="sample_method" id="dogBite" value="Dog Bite" required>
                                         <label class="form-check-label" for="dogBite">Dog Bite</label>
                                     </div></div>
                                     <div class="col-md-6"> <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="sample_method" id="biomaterialSpecimen" value="Biomaterial Specimen" required>
+                                        <input class="form-check-input border-1 border-dark" type="radio" name="sample_method" id="biomaterialSpecimen" value="Biomaterial Specimen" required>
                                         <label class="form-check-label" for="biomaterialSpecimen">Biomaterial Specimen</label>
                                         </div></div>
                                 </div>
@@ -139,7 +139,7 @@ $conn->close();
                         </div>
                     </div>
 
-                    <hr class="border border-dark border-2">
+                    <hr class="border border-dark border-1">
 
                     <div class="d-flex w-100 mt-5 pt-5">
                         <div class="w-50">
@@ -148,24 +148,24 @@ $conn->close();
                         </div>
                         <div class="w-75">
                             
-                                <p>Sampling collection number <input type="text" name="sampling_number" class="form-control border border-2 border-dark w-50" placeholder="Sampling collection number"></p>
-                                <p>Location of Capture <input type="text" name="location_capture" class="form-control border border-2 border-dark w-50" placeholder="Location of Capture"></p>
+                                <p>Sampling collection number <input type="text" name="sampling_number" class="form-control border border-1 border-dark w-50" placeholder="Sampling collection number"></p>
+                                <p>Location of Capture <input type="text" name="location_capture" class="form-control border border-1 border-dark w-50" placeholder="Location of Capture"></p>
                                 <p>Latitude
                                     <input type="radio" class="form-control-m" name="latitude_northsouth" value="N" required><strong>N</strong>
                                     <input type="radio" class="form-control-m" name="latitude_northsouth" value="S" required><strong>S</strong>
-                                    <input required type="number" class="form-control-sm" name="latitude_degree"><strong>°</strong>
-                                    <input required type="number" class="form-control-sm" name="latitude_minutes"><strong>'</strong>
-                                    <input required type="number" class="form-control-sm" name="latitude_seconds"><strong>''</strong>
+                                    <input required type="number" class="form-control-sm border-1 border-dark" name="latitude_degree"><strong>°</strong>
+                                    <input required type="number" class="form-control-sm border-1 border-dark" name="latitude_minutes"><strong>'</strong>
+                                    <input required type="number" class="form-control-sm border-1 border-dark" name="latitude_seconds"><strong>''</strong>
                                 </p>
                                 <p>Longitude
                                     <input type="radio" class="form-control-m" name="longitude_eastwest" value="E" required><strong>E</strong>
                                     <input type="radio" class="form-control-m" name="longitude_eastwest" value="W" required><strong>W</strong>
-                                    <input required type="number" class="form-control-sm" name="longitude_degree"><strong>°</strong>
-                                    <input required type="number" class="form-control-sm" name="longitude_minutes"><strong>'</strong>
-                                    <input required type="number" class="form-control-sm" name="longitude_seconds"><strong>''</strong>
+                                    <input required type="number" class="form-control-sm border-1 border-dark" name="longitude_degree"><strong>°</strong>
+                                    <input required type="number" class="form-control-sm border-1 border-dark" name="longitude_minutes"><strong>'</strong>
+                                    <input required type="number" class="form-control-sm border-1 border-dark" name="longitude_seconds"><strong>''</strong>
                                 </p>
                                 <p>Class
-                                    <select required name="sample_class" id="sample_class" class="form-control form-control-sm w-50 border border-2 border-dark">
+                                    <select required name="sample_class" id="sample_class" class="form-control form-control-sm w-50 border border-1 border-dark">
                                         <option value="">Class</option>
                                         <?php if (!empty($class_options)): ?>
                                             <?php foreach ($class_options as $option): ?>
@@ -178,7 +178,7 @@ $conn->close();
                                 </p>
                                 <div style="display: flex; align-items: center;">
                                     <div style="display: inline-block; margin-right: 10px;"> <p>Genus
-                                        <select required name="sample_genus" id="sample_genus" class="form-control form-control-sm border border-2 border-dark" style="width: 300px;">
+                                        <select required name="sample_genus" id="sample_genus" class="form-control form-control-sm border border-1 border-dark" style="width: 300px;">
                                             <option value="">Genus</option>
                                             <?php if (!empty($genus_options)): ?>
                                                 <?php foreach ($genus_options as $option): ?>
@@ -191,7 +191,7 @@ $conn->close();
                                     </div>
                                     <div style="display: inline-block;">
                                         <p>Species
-                                            <select required name="sample_species" id="sample_species" class="form-control form-control-sm border border-2 border-dark" style="width: 300px;">
+                                            <select required name="sample_species" id="sample_species" class="form-control form-control-sm border border-1 border-dark" style="width: 300px;">
                                                 <option value="">Species</option>
                                                 <?php if (!empty($species_options)): ?>
                                                     <?php foreach ($species_options as $option): ?>
@@ -206,14 +206,14 @@ $conn->close();
                                 </div>
                                 <div style="display: flex; align-items: center;">
                                     <div style="display: inline-block; margin-right: 10px;"> <p>Sex
-                                        <select required name="sample_genus" id="sample_genus" name="sample_sex" class="form-control form-control-sm border border-2 border-dark" style="width: 200px;">
+                                        <select required name="sample_genus" id="sample_genus" name="sample_sex" class="form-control form-control-sm border border-1 border-dark" style="width: 200px;">
                                             <option value="">Sex</option>
                                             <option value="Male">MALE</option>
                                             <option value="Female">FEMALE</option>
                                         </select></p>
                                     </div>
                                     <div style="display: inline-block; margin-right: 10px;"> <p>Stage
-                                        <select required name="sample_genus" id="sample_genus" name="sample_age" class="form-control form-control-sm border border-2 border-dark" style="width: 200px;">
+                                        <select required name="sample_genus" id="sample_genus" name="sample_age" class="form-control form-control-sm border border-1 border-dark" style="width: 200px;">
                                         <option value=""> Stage </option>
                                         <option value="Subadult">SUBADULT</option>
                                         <option value="Juvenile">JUVENILE</option>
@@ -222,7 +222,7 @@ $conn->close();
                                         </select></p>
                                     </div>
                                     <div style="display: inline-block;">
-                                        <p>Weight <input type="text" name="sample_weight" class="form-control form-control-sm border border-2 border-dark" style="width:200px;" placeholder="Weight(kg)"></p>
+                                        <p>Weight <input type="text" name="sample_weight" class="form-control form-control-sm border border-1 border-dark" style="width:200px;" placeholder="Weight(kg)"></p>
                                     </div>
                                 </div>         
                                 

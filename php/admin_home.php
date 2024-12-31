@@ -39,7 +39,7 @@
                     include "topnav.php";
                 ?>
 
-                    <table class="table table-striped table-hover mt-5">
+                    <table class="table table-striped table-bordered table-hover mt-5 text-center">
                         <thead>
                             <tr>
                                 <th>User ID</th>
@@ -57,7 +57,7 @@
                         $detail_result = $detail_check->get_result();
                         
                         while ($user_row = $detail_result->fetch_assoc()) {
-                            echo "<tr onclick='window.location.href = \"admin_row.php?user_id=" . $user_row['user_id'] . "\";'>";
+                            echo "<tr role='button' onclick='window.location.href = \"admin_row.php?user_id=" . $user_row['user_id'] . "\";'>";
                             echo "<td>" . $user_row['user_id'] . "</td>";
                             echo "<td>" . $user_row['user_username'] . "</td>";
                             echo "<td>" . $user_row['user_fullname'] . "</td>";

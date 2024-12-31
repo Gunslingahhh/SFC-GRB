@@ -78,15 +78,15 @@
                             <form action="settings_process.php" method="POST">
                                 <div class="mb-3">
                                     <label for="contact-number" class="form-label fw-semibold">Contact Number:</label>
-                                    <input type="text" class="form-control" id="contact-number" name="contact-number" value="<?php echo $contactNumber; ?>">
+                                    <input type="text" class="form-control border-1 border-dark" id="contact-number" name="contact-number" value="<?php echo $contactNumber; ?>">
                                 </div>
                                 <div class="mb-3">
                                     <label for="email" class="form-label fw-semibold">Email:</label>
-                                    <input type="email" class="form-control" id="email" name="email" value="<?php echo $email; ?>">
+                                    <input type="email" class="form-control border-1 border-dark" id="email" name="email" value="<?php echo $email; ?>">
                                 </div>
                                 <div class="mb-3">
                                     <label for="organization" class="form-label fw-semibold">Organization:</label>
-                                    <input type="text" class="form-control" id="organization" name="organization" value="<?php echo $organization; ?>">
+                                    <input type="text" class="form-control border-1 border-dark" id="organization" name="organization" value="<?php echo $organization; ?>">
                                 </div>
 
                                 <div class="d-grid">
