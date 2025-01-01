@@ -246,7 +246,7 @@
                         <div class="card w-50 p-3 border border-dark mt-4 mb-5">
                             <h6 class="card-title fw-bold">Raw Sequence</h6>
                             <div role="button" class="p-5 card-body rounded border border-2 border-primary d-flex justify-content-center align-items-center">
-                                <p><span class="fw-bold">Upload</span> your file here</p>
+                                <p><span class="fw-bold text-success">Upload</span> your file here</p>
                                 <input type="file" id="raw-sequence" name="raw-sequence" accept=".txt" style="display:none;">
                             </div>
                         </div>
@@ -254,7 +254,7 @@
                         <div class="card w-50 p-3 border border-dark mt-4 mb-5">
                             <h6 class="card-title fw-bold">Cleaned Sequence</h6>
                             <div role="button" class="p-5 card-body rounded border border-2 border-primary d-flex justify-content-center align-items-center">
-                                <p><span class="fw-bold">Upload</span> your file here</p>
+                                <p><span class="fw-bold text-success">Upload</span> your file here</p>
                                 <input type="file" id="cleaned-sequence" name="cleaned-sequence" accept=".txt" style="display:none;">
                             </div>
                         </div>
