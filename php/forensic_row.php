@@ -41,10 +41,9 @@
     </head>
     <body>
         <div class="grid-container center">
-            <div class="item1">
-                <?php 
-                    include "sidenav.php";
-                ?>
+            <?php 
+                include "sidenav.php";
+            ?>
             <main class="col ps-md-0 main-content">
                 <div class="ms-3">
                     <?php
@@ -76,7 +75,7 @@
                                 <td><?php echo $collectionNumber ?></td>
                                 <td><?php echo $sex ?></td>
                                 <td><?php echo $stage ?></td>
-                                <td><?php echo $weight ?></td>
+                                <td><?php echo $weight ?> kg</td>
                                 <td><?php echo $isVouchered ?></td>
                                 <td><?php echo $storageLocationVoucheredSpecimen ?></td>
                                 <td><?php echo $class ?></td>
@@ -138,7 +137,6 @@
                     </table>
                 </div>
             </main>
-            </div>
         </div>
     </body>
 </html>

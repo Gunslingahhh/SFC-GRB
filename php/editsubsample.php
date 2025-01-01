@@ -37,7 +37,7 @@
             include "sidenav.php";
         ?>
         <main class="col ps-md-0 main-content">
-            <p>Yo</p>    
+            <p>Yo</p>
         </main>
         </div>
     </body>
