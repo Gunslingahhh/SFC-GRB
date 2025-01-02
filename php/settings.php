@@ -35,22 +35,19 @@
         <script src="../js/bootstrap.bundle.min.js"></script>
         <script src="../adminkit-main/static/js/app.js"></script>
         <script src="../js/app.js"></script>
-
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Main Page</title>
     </head>
-
-    <body class="bg-light">
-        <div class="container-fluid">
-            <div class="row flex-nowrap">
-                <?php include "sidenav.php"; ?>
-                <main class="col ps-md-5 mt-md-5 main-content">
-                    <h1 class="mb-4">Settings</h1>
-                    <h5>Edit profile</h5>
-                    <div class="d-flex justify-content-end me-5 pe-5">
-                        <div class= "w-50">
-                            <form action="settings_process.php" enctype="multipart/form-data" method="POST" class="w-75">
+    <body class="third-color">
+        <?php 
+            include "sidenav.php";
+        ?>
+        <main class="col ps-md-0 main-content">
+            <div class="ms-4">
+                <div class="d-flex w-100 mt-5 pt-5">
+                    <div class="w-50">
+                        <p class="fw-bold">Settings</p>
+                    </div>
+                    <div class="w-75">
+                    <form action="settings_process.php" enctype="multipart/form-data" method="POST" class="w-75">
                                 <div class="mb-4">
                                     <div class="mb-2">
                                         <label for="user-photo" class="form-label fw-semibold">Profile Picture</label>
@@ -65,7 +62,7 @@
                                         <?php endif; ?>
                                     </div>
                                     <div class="d-grid w-25">
-                                        <button type="submit" name="photo_submit" class="btn btn-primary ms-4 w-100">Upload</button>
+                                        <button type="submit" name="photo_submit" class="btn btn-primary ms-2 w-100">Upload</button>
                                     </div>
                                 </div>
                             </form>
@@ -78,25 +75,24 @@
                             <form action="settings_process.php" method="POST">
                                 <div class="mb-3">
                                     <label for="contact-number" class="form-label fw-semibold">Contact Number:</label>
-                                    <input type="text" class="form-control border-1 border-dark" id="contact-number" name="contact-number" value="<?php echo $contactNumber; ?>">
+                                    <input type="text" class="form-control border-1 border-dark w-50" id="contact-number" name="contact-number" value="<?php echo $contactNumber; ?>">
                                 </div>
                                 <div class="mb-3">
                                     <label for="email" class="form-label fw-semibold">Email:</label>
-                                    <input type="email" class="form-control border-1 border-dark" id="email" name="email" value="<?php echo $email; ?>">
+                                    <input type="email" class="form-control border-1 border-dark w-50" id="email" name="email" value="<?php echo $email; ?>">
                                 </div>
                                 <div class="mb-3">
                                     <label for="organization" class="form-label fw-semibold">Organization:</label>
-                                    <input type="text" class="form-control border-1 border-dark" id="organization" name="organization" value="<?php echo $organization; ?>">
+                                    <input type="text" class="form-control border-1 border-dark w-50" id="organization" name="organization" value="<?php echo $organization; ?>">
                                 </div>
 
                                 <div class="d-grid">
-                                    <button type="submit" name="info_submit" class="btn btn-primary mb-5">Submit</button>
+                                    <button type="submit" name="info_submit" class="btn btn-primary w-50 mb-5">Submit</button>
                                 </div>
                             </form>
-                        </div>
                     </div>
-                </main>
+                </div>
             </div>
-        </div>
+        </main>
     </body>
 </html>

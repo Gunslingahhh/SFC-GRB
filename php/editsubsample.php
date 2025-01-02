@@ -32,7 +32,7 @@
         <link rel="stylesheet" href="../css/adduser.css">
         <script src="../js/settings.js"></script>
     </head>
-    <body>
+    <body class="third-color">
         <?php 
             include "sidenav.php";
         ?>

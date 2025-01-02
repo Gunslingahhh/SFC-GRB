@@ -26,7 +26,7 @@
         <title>Main Page</title>
     </head>
 
-    <body class="bg-light">
+    <body class="third-color">
         <div class="container-fluid">
             <div class="row flex-nowrap">
                 <?php include "sidenav.php"; ?> 

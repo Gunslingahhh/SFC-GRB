@@ -39,7 +39,7 @@
         <link rel="stylesheet" href="../css/adduser.css">
         <script src="../js/settings.js"></script>
     </head>
-    <body>
+    <body class="third-color">
         <div class="grid-container center">
             <?php 
                 include "sidenav.php";

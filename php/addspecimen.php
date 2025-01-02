@@ -66,7 +66,7 @@ $conn->close();
     <script src="../adminkit-main/static/js/app.js"></script>
     <script src="../js/app.js"></script>
     </head>
-<body class="bg-light">
+<body class="third-color">
     <div class="container-fluid">
         <div class="row flex-nowrap">
             <?php include "sidenav.php"; ?>

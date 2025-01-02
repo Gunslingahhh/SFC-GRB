@@ -30,7 +30,7 @@
         <div class="container-fluid">
             <div class="row flex-nowrap">
                 <?php include "sidenav.php"; ?> 
-                <main class="col ps-md-0 main-content">
+                <main class="col ps-md-0 main-content third-color">
                     <div class="ms-3">
                         <form class="d-flex justify-content-end me-2" role="search" action="<?php echo $searchAction; ?>" method="GET">
                             <input class="form-control me-2 w-25" type="search" name="search" placeholder="Search for sample" aria-label="Search">

@@ -26,7 +26,7 @@
         <title>Main Page</title>
     </head>
 
-    <body class="bg-light">
+    <body class="third-color">
         <div class="container-fluid">
             <div class="row flex-nowrap">
                 <?php include "sidenav.php"; ?> 
@@ -58,12 +58,12 @@
                                 $detail_result = $detail_check->get_result();
                                 
                                 while ($user_row = $detail_result->fetch_assoc()) {
-                                    echo "<tr role='button' class='text-center' onclick='window.location.href = \"admin_row.php?user_id=" . $user_row['user_id'] . "\";'>";
-                                    echo "<td>" . $user_row['user_id'] . "</td>";
-                                    echo "<td>" . $user_row['user_username'] . "</td>";
-                                    echo "<td>" . $user_row['user_fullname'] . "</td>";
-                                    echo "<td>" . $user_row['user_email'] . "</td>";
-                                    echo "<td>" . $user_row['user_type'] . "</td>";
+                                    echo "<tr role='button' class='text-center' onclick='window.location.href = \"user_row.php?user_id=" . $user_row['user_id'] . "\";'>";
+                                    echo "<td>" . $user_row['specimen_id'] . "</td>";
+                                    echo "<td>" . $user_row['specimen_collectionNumber'] . "</td>";
+                                    echo "<td>" . $user_row['specimen_class'] . "</td>";
+                                    echo "<td>" . $user_row['specimen_genus'] . "</td>";
+                                    echo "<td>" . $user_row['specimen_species'] . "</td>";
                                     echo "</tr>";
                                 }
                                 ?>

@@ -29,14 +29,17 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
-        <link rel="stylesheet" href="../css/adduser.css">
-        <script src="../js/settings.js"></script>
+        <link href="../css/styles.css" rel="stylesheet">
+        <link href="../bootstrap-icons-1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+        <script src="../js/bootstrap.bundle.min.js"></script>
+        <script src="../adminkit-main/static/js/app.js"></script>
+        <script src="../js/app.js"></script>
     </head>
     <body>
         <?php 
             include "sidenav.php";
         ?>
-        <main class="col ps-md-0 main-content">
+        <main class="col ps-md-0 main-content third-color">
             <div class="ms-4">
                 <h2 class="fw-bold">Add a sub-sample</h2>
                 <div class="d-flex w-100 mt-5 pt-5">
@@ -245,16 +248,18 @@
 
                         <div class="card w-50 p-3 border border-dark mt-4 mb-5">
                             <h6 class="card-title fw-bold">Raw Sequence</h6>
-                            <div role="button" class="p-5 card-body rounded border border-2 border-primary d-flex justify-content-center align-items-center">
+                            <div role="button" id="raw-sequence-container" class="p-5 card-body rounded border border-2 border-primary d-flex flex-column justify-content-center align-items-center text-center">
                                 <p><span class="fw-bold text-success">Upload</span> your file here</p>
+                                <p id="rawSequencefileName"></p>
                                 <input type="file" id="raw-sequence" name="raw-sequence" accept=".txt" style="display:none;">
                             </div>
                         </div>
 
                         <div class="card w-50 p-3 border border-dark mt-4 mb-5">
                             <h6 class="card-title fw-bold">Cleaned Sequence</h6>
-                            <div role="button" class="p-5 card-body rounded border border-2 border-primary d-flex justify-content-center align-items-center">
+                            <div role="button" id="cleaned-sequence-container" class="p-5 card-body rounded border border-2 border-primary d-flex flex-column justify-content-center align-items-center text-center">
                                 <p><span class="fw-bold text-success">Upload</span> your file here</p>
+                                <p id="cleanedSequencefileName"></p>
                                 <input type="file" id="cleaned-sequence" name="cleaned-sequence" accept=".txt" style="display:none;">
                             </div>
                         </div>
