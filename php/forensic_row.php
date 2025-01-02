@@ -48,7 +48,7 @@
                 <div class="ms-3">
                     <?php
                         $buttonText = "Add subsample +";
-                        $buttonLink = "addsubsample.php";
+                        $buttonLink = "addsubsample.php?specimen_id=" . $id; // Concatenate the string and $id
                         $searchPlaceholder = "Search for subsample";
                         $searchAction = "#";
                         include "topnav.php";

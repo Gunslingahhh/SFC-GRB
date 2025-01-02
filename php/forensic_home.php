@@ -50,28 +50,28 @@
                                 </tr>
                             </thead>
                             <tbody>
-                            <?php
-                                $forensic_sql = "SELECT specimen.specimen_id, specimen.specimen_collectionNumber, specimen.specimen_class, specimen.specimen_genus, specimen.specimen_species, user.user_id, user.user_fullname, user.user_contactNumber, user.user_email
-                                FROM specimen
-                                JOIN user ON specimen.user_id = user.user_id";
+                                <?php
+                                    $forensic_sql = "SELECT specimen.specimen_id, specimen.specimen_collectionNumber, specimen.specimen_class, specimen.specimen_genus, specimen.specimen_species, user.user_id, user.user_fullname, user.user_contactNumber, user.user_email
+                                    FROM specimen
+                                    JOIN user ON specimen.user_id = user.user_id";
 
-                                $forensic_stmt = $conn->prepare($forensic_sql);
-                                $forensic_stmt->execute();
-                                $forensic_result = $forensic_stmt->get_result();
+                                    $forensic_stmt = $conn->prepare($forensic_sql);
+                                    $forensic_stmt->execute();
+                                    $forensic_result = $forensic_stmt->get_result();
 
-                                while ($forensic_row = $forensic_result->fetch_assoc()) {
-                                    echo "<tr class='text-center' role='button' onclick='window.location.href = \"forensic_row.php?specimen_id=" . $forensic_row['specimen_id'] . "\";'>";
-                                        echo "<td>" . $forensic_row['specimen_id'] . "</td>";
-                                        echo "<td>" . $forensic_row['specimen_collectionNumber'] . "</td>";
-                                        echo "<td>" . $forensic_row['specimen_class'] . "</td>";
-                                        echo "<td>" . $forensic_row['specimen_genus'] . "</td>";
-                                        echo "<td>" . $forensic_row['specimen_species'] . "</td>";
-                                        echo "<td>" . $forensic_row['user_fullname'] . "</td>";
-                                        echo "<td>" . $forensic_row['user_contactNumber'] . "</td>";
-                                        echo "<td>" . $forensic_row['user_email'] . "</td>";
-                                    echo "</tr></a>";
-                                }
-                            ?>
+                                    while ($forensic_row = $forensic_result->fetch_assoc()) {
+                                        echo "<tr class='text-center' role='button' onclick='window.location.href = \"forensic_row.php?specimen_id=" . $forensic_row['specimen_id'] . "\";'>";
+                                            echo "<td>" . $forensic_row['specimen_id'] . "</td>";
+                                            echo "<td>" . $forensic_row['specimen_collectionNumber'] . "</td>";
+                                            echo "<td>" . $forensic_row['specimen_class'] . "</td>";
+                                            echo "<td>" . $forensic_row['specimen_genus'] . "</td>";
+                                            echo "<td>" . $forensic_row['specimen_species'] . "</td>";
+                                            echo "<td>" . $forensic_row['user_fullname'] . "</td>";
+                                            echo "<td>" . $forensic_row['user_contactNumber'] . "</td>";
+                                            echo "<td>" . $forensic_row['user_email'] . "</td>";
+                                        echo "</tr></a>";
+                                    }
+                                ?>
                             </tbody>
                         </table>
                     </div>

@@ -9,6 +9,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const cleanedSequence = document.getElementById("cleaned-sequence");   
     const cleanedSequenceContainer = document.getElementById("cleaned-sequence-container");
 
+    const photoIdentification = document.getElementById("photo-identification");
+    const photoIdentificationContainer = document.getElementById("photo-identification-container");
+
     if (fileInput && profilePicture) {
         profilePicture.addEventListener("click", function () {
             fileInput.click();
@@ -53,6 +56,21 @@ document.addEventListener('DOMContentLoaded', () => {
         const fileName = file.name;
         const fileSize = file.size;
         document.getElementById('cleanedSequencefileName').textContent = fileName + " ("+ fileSize + " KB)";
+    });
+
+    photoIdentificationContainer.addEventListener("click", function() {
+        photoIdentification.click();
+    });
+
+    photoIdentification.addEventListener('change', function() {
+        const file = photoIdentification.files[0];
+        const reader = new FileReader();
+
+        reader.onload = function(e) {
+            photoIdentificationContainer.src = e.target.result;
+        };
+
+        reader.readAsDataURL(file);
     });
 });
 
