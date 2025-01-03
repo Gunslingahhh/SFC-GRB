@@ -72,7 +72,7 @@ $conn->close();
             <?php include "sidenav.php"; ?>
             <main class="col ps-md-0 main-content">
                 <div class="ms-4">
-                <h2 class="fw-bold">Add a sample</h2>
+                <h2 class="fw-bold">Edit a sample</h2>
                 <div class="d-flex w-100 mt-5 pt-5">
                     <div class="w-50">
                         <p class="fw-bold">Sample receive</p>

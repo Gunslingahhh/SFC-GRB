@@ -39,7 +39,22 @@
                         <div class="w-75">
                                 
                             <p class="mt-3">Date collected <input type="date" class="form-control border border-1 border-dark w-50" id="date-collected" name="date-collected"></p>
-                            <p class="mt-3">Storage location<input type="text" class="form-control border border-1 border-dark w-50 mb-5" id="storage_location" name="storage-location" value="" placeholder="Storage location"></p>
+
+                            <p>Location of Capture <input type="text" name="location_capture" class="form-control border border-1 border-dark w-50" placeholder="Location of Capture"></p>
+                                <p>Latitude
+                                    <input type="radio" class="form-control-m" name="latitude_northsouth" value="N" required><strong>N</strong>
+                                    <input type="radio" class="form-control-m" name="latitude_northsouth" value="S" required><strong>S</strong>
+                                    <input required type="number" class="form-control-sm border-1 border-dark" name="latitude_degree"><strong>°</strong>
+                                    <input required type="number" class="form-control-sm border-1 border-dark" name="latitude_minutes"><strong>'</strong>
+                                    <input required type="number" class="form-control-sm border-1 border-dark" name="latitude_seconds"><strong>''</strong>
+                                </p>
+                                <p>Longitude
+                                    <input type="radio" class="form-control-m" name="longitude_eastwest" value="E" required><strong>E</strong>
+                                    <input type="radio" class="form-control-m" name="longitude_eastwest" value="W" required><strong>W</strong>
+                                    <input required type="number" class="form-control-sm border-1 border-dark" name="longitude_degree"><strong>°</strong>
+                                    <input required type="number" class="form-control-sm border-1 border-dark" name="longitude_minutes"><strong>'</strong>
+                                    <input required type="number" class="form-control-sm border-1 border-dark" name="longitude_seconds"><strong>''</strong>
+                                </p>
                         </div>
                 </div>
                 <hr class="border border-dark border-1">
@@ -50,6 +65,7 @@
                             <p>What is the type of sample collected?</p>
                         </div>
                         <div class="w-75">
+                        <p>Storage location<input type="text" class="form-control border border-1 border-dark w-50 mb-5" id="storage_location" name="storage-location" value="" placeholder="Storage location"></p>
                             <div class="row">
                                 <div class="col-md-6">
                                     <p class="fw-bold mb-0">Biopsy</p>

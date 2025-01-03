@@ -85,6 +85,7 @@ function buttonClicked() {
         buttonButton.style.left="-2px";
         isVouchered.value="No";
         storageLocation.disabled=true;
+        storageLocation.value="";
     }
     else{
         buttonContainer.style.backgroundColor = "green";

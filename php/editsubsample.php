@@ -271,8 +271,8 @@
                             <div class="card w-50 p-3 border border-dark mt-4 mb-5">
                                 <h6 class="card-title fw-bold">Raw Sequence</h6>
                                 <div role="button" id="raw-sequence-container" class="p-5 card-body rounded border border-2 border-primary d-flex flex-column justify-content-center align-items-center text-center">
-                                    <p><span class="fw-bold text-success">Upload</span> your file here</p>
-                                    <p id="rawSequencefileName"></p>
+                                    <p><span class="fw-bold text-success">Replace</span> your file here</p>
+                                    <p id="rawSequencefileName" class="text-break"><?php echo $rawSequence ?></p>
                                     <input type="file" id="raw-sequence" name="raw-sequence" accept=".txt" style="display:none;">
                                 </div>
                             </div>
@@ -280,12 +280,13 @@
                             <div class="card w-50 p-3 border border-dark mt-4 mb-5">
                                 <h6 class="card-title fw-bold">Cleaned Sequence</h6>
                                 <div role="button" id="cleaned-sequence-container" class="p-5 card-body rounded border border-2 border-primary d-flex flex-column justify-content-center align-items-center text-center">
-                                    <p><span class="fw-bold text-success">Upload</span> your file here</p>
-                                    <p id="cleanedSequencefileName"></p>
+                                    <p><span class="fw-bold text-success">Replace</span> your file here</p>
+                                    <p id="cleanedSequencefileName" class="text-break"><?php echo $cleanedSequence ?></p>
                                     <input type="file" id="cleaned-sequence" name="cleaned-sequence" accept=".txt" style="display:none;">
                                 </div>
                             </div>
                         </div>
+                    </div>
                 </div>
                 <hr class="border border-dark border-1">
                 <div>
@@ -296,9 +297,8 @@
                         <div class="w-75">
                             <div class="card w-50 p-3 border border-dark mt-4 mb-5">
                                 <h6 class="card-title fw-bold">Photo Identification</h6>
-                                <img role="button" id="photo-identification-container" class="card-body rounded border border-2 border-primary" style="object-fit: contain; display: block; min-height: 200px; max-height: 200px;">
-                                    <input type="file" id="photo-identification" name="photo-identification" accept="image/jpeg, image/png, image/jpg" style="display:none;">
-                                </div>
+                                <img role="button" id="photo-identification-container" src="<?php echo $photoIdentification ?>" class="card-body rounded border border-2 border-primary" style="object-fit: contain; display: block; min-height: 200px; max-height: 200px;">
+                                <input type="file" id="photo-identification" name="photo-identification" accept="image/jpeg, image/png, image/jpg" style="display:none;">
                             </div>
                         </div>
                     </div>
