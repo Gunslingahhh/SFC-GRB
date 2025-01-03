@@ -43,3 +43,10 @@
     left: -2px;
     border: 1px solid black;
 }
+
+input[type="radio"]:disabled {
+    opacity: 1; /* Make it fully opaque */
+    cursor: default; /* Change cursor back to normal */
+    /* Remove any other default disabled styles you don't want */
+    filter: none; /* remove grayscale filter */
+}
