@@ -47,49 +47,49 @@
                         <p class="fw-bold">Settings</p>
                     </div>
                     <div class="w-75">
-                    <form action="settings_process.php" enctype="multipart/form-data" method="POST" class="w-75">
-                                <div class="mb-4">
-                                    <div class="mb-2">
-                                        <label for="user-photo" class="form-label fw-semibold">Profile Picture</label>
-                                        <div class="rounded-circle overflow-hidden border border-3 border-dark" role="button" style="width: 150px; height: 150px; background-color: #eee;">
-                                            <img id="user-photo" src="<?php echo $profilePictureSrc; ?>" style="width: 100%; height: 100%; object-fit: cover; display: block;">
-                                        </div>
-                                    </div>
-                                    <div class="mb-3">
-                                        <input class="form-control d-none" type="file" id="user-photo-filename" name="user-photo-filename" accept="image/jpeg, image/png, image/jpg">
-                                        <?php if (isset($_GET['error'])): ?>
-                                            <div class="text-danger mt-2"><?php echo $_GET['error']; ?></div>
-                                        <?php endif; ?>
-                                    </div>
-                                    <div class="d-grid w-25">
-                                        <button type="submit" name="photo_submit" class="btn btn-primary ms-2 w-100">Upload</button>
+                        <form action="settings_process.php" enctype="multipart/form-data" method="POST" class="w-75">
+                            <div class="mb-4">
+                                <div class="mb-2">
+                                    <label for="user-photo" class="form-label fw-semibold">Profile Picture</label>
+                                    <div class="rounded-circle overflow-hidden border border-3 border-dark" role="button" style="width: 150px; height: 150px; background-color: #eee;">
+                                        <img id="user-photo" src="<?php echo $profilePictureSrc; ?>" style="width: 100%; height: 100%; object-fit: cover; display: block;">
                                     </div>
                                 </div>
-                            </form>
-                            <?php
-                                if (isset($_SESSION['message'])) {
-                                    echo "<div class='alert alert-primary mt-3'>" . $_SESSION['message'] . "</div>";
-                                    unset($_SESSION['message']);
-                                }
-                            ?>
-                            <form action="settings_process.php" method="POST">
                                 <div class="mb-3">
-                                    <label for="contact-number" class="form-label fw-semibold">Contact Number:</label>
-                                    <input type="text" class="form-control border-1 border-dark w-50" id="contact-number" name="contact-number" value="<?php echo $contactNumber; ?>">
+                                    <input class="form-control d-none" type="file" id="user-photo-filename" name="user-photo-filename" accept="image/jpeg, image/png, image/jpg">
+                                    <?php if (isset($_GET['error'])): ?>
+                                        <div class="text-danger mt-2"><?php echo $_GET['error']; ?></div>
+                                    <?php endif; ?>
                                 </div>
-                                <div class="mb-3">
-                                    <label for="email" class="form-label fw-semibold">Email:</label>
-                                    <input type="email" class="form-control border-1 border-dark w-50" id="email" name="email" value="<?php echo $email; ?>">
+                                <div class="d-grid w-25">
+                                    <button type="submit" name="photo_submit" class="btn btn-primary ms-2 w-100">Upload</button>
                                 </div>
-                                <div class="mb-3">
-                                    <label for="organization" class="form-label fw-semibold">Organization:</label>
-                                    <input type="text" class="form-control border-1 border-dark w-50" id="organization" name="organization" value="<?php echo $organization; ?>">
-                                </div>
+                            </div>
+                        </form>
+                        <?php
+                            if (isset($_SESSION['message'])) {
+                                echo "<div class='alert alert-primary mt-3'>" . $_SESSION['message'] . "</div>";
+                                unset($_SESSION['message']);
+                            }
+                        ?>
+                        <form action="settings_process.php" method="POST">
+                            <div class="mb-3">
+                                <label for="contact-number" class="form-label fw-semibold">Contact Number:</label>
+                                <input type="text" class="form-control border-1 border-dark w-50" id="contact-number" name="contact-number" value="<?php echo $contactNumber; ?>">
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label fw-semibold">Email:</label>
+                                <input type="email" class="form-control border-1 border-dark w-50" id="email" name="email" value="<?php echo $email; ?>">
+                            </div>
+                            <div class="mb-3">
+                                <label for="organization" class="form-label fw-semibold">Organization:</label>
+                                <input type="text" class="form-control border-1 border-dark w-50" id="organization" name="organization" value="<?php echo $organization; ?>">
+                            </div>
 
-                                <div class="d-grid">
-                                    <button type="submit" name="info_submit" class="btn btn-primary w-50 mb-5">Submit</button>
-                                </div>
-                            </form>
+                            <div class="d-grid">
+                                <button type="submit" name="info_submit" class="btn btn-primary w-50 mb-5">Submit</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
