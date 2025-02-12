@@ -18,7 +18,7 @@
         <div class="mt-5">
             <div class="d-flex wallpaper w-100 bg-light border-0">
                 <div class="w-50 mt-5 p-5 text-white text-center d-flex justify-content-center align-items-center" style="min-height: 100px;">
-                    <h2 class="card-title d-flex flex-column text-black fw-bold justify-content-center">
+                    <h2 class="card-title d-flex flex-column text-white fw-bold justify-content-center">
                         <span>Sarawak Forestry Corporation</span>
                         <span>Genetic Resource Bank</span>
                     </h2>
