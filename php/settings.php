@@ -68,7 +68,7 @@
                         </form>
                         <?php
                             if (isset($_SESSION['message'])) {
-                                echo "<div class='alert alert-primary mt-3'>" . $_SESSION['message'] . "</div>";
+                                echo "<div class='alert alert-primary mt-3 w-50'>" . $_SESSION['message'] . "</div>";
                                 unset($_SESSION['message']);
                             }
                         ?>
