@@ -24,7 +24,7 @@
                     </h2>
                 </div>
                 <div class="w-50 mt-5 p-5 text-white text-center d-flex justify-content-center">
-                    <div class="w-75 card bg-white"> <!-- body-container-card-->
+                    <div class="w-50 card bg-white"> <!-- body-container-card-->
                         <div class="card-body mt-3"> <!-- body-container-card-body -->
                             <div class="d-flex flex-column justify-content-center align-items-center">
                                 <a href="../index.php" class="d-flex justify-content-center mt-4">
