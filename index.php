@@ -48,7 +48,7 @@
 			echo <<<HTML
 			<div class="d-flex justify-content-center pie-chart-size">
 				<div class="card w-100">
-					<div class="card-body main-color d-flex justify-content-center p-4"> <!-- background-container -->
+					<div class="card-body wallpaper d-flex justify-content-center p-4"> <!-- background-container -->
 						<div class="card w-75 d-flex justify-content-center">
 							<div class="card-body d-flex flex-column justify-content-center align-items-center">
 								<div class="d-flex justify-content-center w-100">

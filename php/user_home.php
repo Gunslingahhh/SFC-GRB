@@ -58,7 +58,7 @@
                                 $detail_result = $detail_check->get_result();
                                 
                                 while ($user_row = $detail_result->fetch_assoc()) {
-                                    echo "<tr role='button' class='text-center' onclick='window.location.href = \"user_row.php?specimen_id=" . $user_row['specimen_id'] . "\";'>";
+                                    echo "<tr role='button' class='text-center' onclick='window.location.href = \"editspecimen.php?specimen_id=" . $user_row['specimen_id'] . "\";'>";
                                     echo "<td>" . $user_row['specimen_id'] . "</td>";
                                     echo "<td>" . $user_row['specimen_collectionNumber'] . "</td>";
                                     echo "<td>" . $user_row['specimen_class'] . "</td>";

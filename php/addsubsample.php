@@ -280,8 +280,7 @@
                             <div class="card w-50 p-3 border border-dark mt-4 mb-5">
                                 <h6 class="card-title fw-bold">Photo Identification</h6>
                                 <img role="button" id="photo-identification-container" class="card-body rounded border border-2 border-primary" style="object-fit: contain; display: block; min-height: 200px; max-height: 200px;">
-                                    <input type="file" id="photo-identification" name="photo-identification" accept="image/jpeg, image/png, image/jpg" style="display:none;">
-                                </div>
+                                <input type="file" id="photo-identification" name="photo-identification" accept="image/jpeg, image/png, image/jpg" style="display:none;">
                             </div>
                         </div>
                     </div>

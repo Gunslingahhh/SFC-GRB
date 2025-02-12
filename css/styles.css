@@ -2,6 +2,12 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+.wallpaper{
+    background-image: url("../assets/image/wallpaper.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
 .main-color{
     background-color: #386b1f;
 }

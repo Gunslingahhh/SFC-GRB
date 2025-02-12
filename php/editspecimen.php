@@ -72,6 +72,7 @@ $conn->close();
             <?php include "sidenav.php"; ?>
             <main class="col ps-md-0 main-content">
                 <div class="ms-4">
+                <form action="editspecimen_process.php?user_id=<?php echo $_SESSION['userid'] ?>" method="POST">
                 <h2 class="fw-bold">Edit a sample</h2>
                 <div class="d-flex w-100 mt-5 pt-5">
                     <div class="w-50">
@@ -224,10 +225,86 @@ $conn->close();
                                     <div style="display: inline-block;">
                                         <p>Weight <input type="text" name="sample_weight" class="form-control form-control-sm border border-1 border-dark" style="width:200px;" placeholder="Weight(kg)"></p>
                                     </div>
-                                </div>         
-                                
-                                <input type="submit" class="btn bg-primary text-white">
-                            </form>
+                                </div>
+                        </div>
+                    </div>
+
+                    <hr class="border border-dark border-1">
+                    <div>
+                        <div class="d-flex w-100 mt-5">
+                            <div class="w-50">
+                                <p class="fw-bold">DNA Extraction</p>
+                            </div>
+                            <div class="w-75">
+                                <p class="fw-bold">Lab Analyst</p>
+                                <p class="mt-3">Name<input type="text" class="form-control border border-1 border-dark w-50" placeholder="Lab analyst name" name="dna-lab-name"></p>
+                                <p class="mt-3">Contact Number<input type="text" class="form-control border border-1 border-dark w-50 mb-5" placeholder="Lab analyst contact number" name="dna-lab-number"></p>
+
+                                <p class="fw-bold">DNA Extraction Size (bp)</p>
+                                <p class="mt-3"><input type="text" class="form-control border border-1 border-dark w-50 mb-5" placeholder="DNA Extraction Size (bp)" name="dna-extraction-size"></p>
+                            </div>
+                    </div>
+                    <hr class="border border-dark border-1">
+                    <div>
+                        <div class="d-flex w-100 mt-5">
+                            <div class="w-50">
+                                <p class="fw-bold">PCR</p>
+                            </div>
+                            <div class="w-75">
+                                <p class="fw-bold">Lab Analyst</p>
+                                <p class="mt-3">Name<input type="text" class="form-control border border-1 border-dark w-50" placeholder="Lab analyst name" name="pcr-lab-name"></p>
+                                <p class="mt-3">Contact Number<input type="text" class="form-control border border-1 border-dark w-50 mb-5" placeholder="Lab analyst contact number" name="pcr-lab-number"></p>
+
+                                <p class="fw-bold">PCR Amplification</p>
+                                <p class="mt-3">Primer Used<input type="text" class="form-control border border-1 border-dark w-50" placeholder="Primer Used" name="primer-used"></p>
+                                <p class="mt-3">Blast Result (%)<input type="text" class="form-control border border-1 border-dark w-50 mb-5" placeholder="Blast Result (%)" name="blast-result"></p>
+                            </div>
+                    </div>
+                    <hr class="border border-dark border-1">
+                    <div>
+                        <div class="d-flex w-100 mt-5">
+                            <div class="w-50">
+                                <p class="fw-bold">Cleaning Raw Sequence</p>
+                            </div>
+                            <div class="w-75">
+                                <p class="fw-bold">Lab Analyst</p>
+                                <p class="mt-3">Name<input type="text" class="form-control border border-1 border-dark w-50" placeholder="Lab analyst name" name="cleaning-lab-name"></p>
+                                <p class="mt-3">Contact Number<input type="text" class="form-control border border-1 border-dark w-50 mb-5" placeholder="Lab analyst contact number" name="cleaning-lab-number"></p>
+
+                                <div class="card w-50 p-3 border border-dark mt-4 mb-5">
+                                    <h6 class="card-title fw-bold">Raw Sequence</h6>
+                                    <div role="button" id="raw-sequence-container" class="p-5 card-body rounded border border-2 border-primary d-flex flex-column justify-content-center align-items-center text-center">
+                                        <p><span class="fw-bold text-success">Upload</span> your file here</p>
+                                        <p id="rawSequencefileName"></p>
+                                        <input type="file" id="raw-sequence" name="raw-sequence" accept=".txt" style="display:none;">
+                                    </div>
+                                </div>
+
+                                <div class="card w-50 p-3 border border-dark mt-4 mb-5">
+                                    <h6 class="card-title fw-bold">Cleaned Sequence</h6>
+                                    <div role="button" id="cleaned-sequence-container" class="p-5 card-body rounded border border-2 border-primary d-flex flex-column justify-content-center align-items-center text-center">
+                                        <p><span class="fw-bold text-success">Upload</span> your file here</p>
+                                        <p id="cleanedSequencefileName"></p>
+                                        <input type="file" id="cleaned-sequence" name="cleaned-sequence" accept=".txt" style="display:none;">
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                    <hr class="border border-dark border-1">
+                    <div>
+                        <div class="d-flex w-100 mt-5">
+                            <div class="w-50">
+                                <p class="fw-bold">Attachments</p>
+                            </div>
+                            <div class="w-75">
+                                <div class="card w-50 p-3 border border-dark mt-4 mb-5">
+                                    <h6 class="card-title fw-bold">Photo Identification</h6>
+                                    <img role="button" id="photo-identification-container" class="card-body rounded border border-2 border-primary" style="object-fit: contain; display: block; min-height: 200px; max-height: 200px;">
+                                    <input type="file" id="photo-identification" name="photo-identification" accept="image/jpeg, image/png, image/jpg" style="display:none;">
+                                </div>
+                                    <input type="submit" class="btn bg-primary text-white">
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
