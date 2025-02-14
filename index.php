@@ -71,25 +71,26 @@ include "php/connection.php";
                 const options = {
                     title: 'Biomaterial Specimens Collected by Taxa',
                     titlePosition: 'out',
+                    pieSliceText: 'value',
                     is3D: true,
                     legend: {
                         position: 'right',
                         alignment: 'center',
                         textStyle: {
                             color: 'black',
-                            fontSize: 20
+                            fontSize: 17
                         }
                     },
                     titleTextStyle: {
                         color: 'black',
-                        fontSize: 30,
+                        fontSize: 20,
                         bold: true,
                         textAlign: 'center'
                     },
                     chartArea: {
                         left: 20,      // Padding on the left side (pixels or percentage)
-                        top: 50,       // Padding on the top side
-                        right: 90,     // Padding on the right side
+                        top: 28,       // Padding on the top side
+                        right: -20,     // Padding on the right side
                         bottom: 10,    // Padding on the bottom side
                     },
                 };
