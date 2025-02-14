@@ -77,7 +77,7 @@ include "php/connection.php";
                         alignment: 'center',
                         textStyle: {
                             color: 'black',
-                            fontSize: 25
+                            fontSize: 20
                         }
                     },
                     titleTextStyle: {
