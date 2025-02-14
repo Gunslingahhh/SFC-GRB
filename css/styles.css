@@ -1,5 +1,13 @@
+@font-face {
+    font-family: 'Palantino'; /* Give your font a name */
+    src: url('../assets/font/palatinolinotype_bold.ttf') format('truetype'); /* Optional fallback */
+    font-weight: normal; /* Define font weight (e.g., normal, bold, 400, 700) */
+    font-style: normal; /* Define font style (e.g., normal, italic) */
+    font-display: swap; /* Important for performance */
+}
+
 *{
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: d-din_exp, sans-serif;
 }
 
 .wallpaper{
@@ -20,8 +28,9 @@
     background-color: #F0F0F0;
 }
 
-.pie-chart-size{
-    width: 100%;
+#myChart { /* Make sure the chart container has dimensions */
+    width: 100%; /* Or whatever width you want */
+    height: 500px; /* Or whatever height you want */
 }
 
 #button-container{

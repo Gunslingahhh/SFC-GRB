@@ -20,7 +20,7 @@
                 <div class="w-50 mt-5 p-5 text-white text-center d-flex justify-content-center align-items-center" style="min-height: 100px;">
                     <h2 class="card-title d-flex flex-column text-white fw-bold justify-content-center">
                         <span>Sarawak Forestry Corporation</span>
-                        <span>Genetic Resource Bank</span>
+                        <span>Genetic Resource Bank (SFC-GRB)</span>
                     </h2>
                 </div>
                 <div class="w-50 mt-5 p-5 text-white text-center d-flex justify-content-center">
