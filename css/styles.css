@@ -30,7 +30,7 @@
 
 #myChart { /* Make sure the chart container has dimensions */
     width: 100%; /* Or whatever width you want */
-    height: 750px; /* Or whatever height you want */
+    height: 600px; /* Or whatever height you want */
 }
 
 #button-container{
