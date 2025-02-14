@@ -69,7 +69,7 @@ include "php/connection.php";
                 });
 
                 const options = {
-                    title: 'Biomaterial Specimens Collected by Taxa',
+                    title: 'Biomaterial Specimens Collected by Taxa since 2022',
                     titlePosition: 'out',
                     pieSliceText: 'value',
                     is3D: true,
