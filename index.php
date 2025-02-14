@@ -77,12 +77,12 @@ include "php/connection.php";
                         alignment: 'center',
                         textStyle: {
                             color: 'black',
-                            fontSize: 14
+                            fontSize: 25
                         }
                     },
                     titleTextStyle: {
                         color: 'black',
-                        fontSize: 18,
+                        fontSize: 30,
                         bold: true,
                         textAlign: 'center'
                     },
