@@ -16,6 +16,15 @@
     background-repeat: no-repeat;
 }
 
+.text-main{
+    color: #F8F8F8;
+}
+
+.nav-link:hover{
+    color: #F8F8F8;
+    background-color: #0F9A4E;
+}
+
 .main-color{
     background-color: #386b1f;
 }

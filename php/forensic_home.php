@@ -32,9 +32,9 @@
                 <?php include "sidenav.php"; ?> 
                 <main class="col ps-md-0 main-content third-color">
                     <div class="ms-3">
-                        <form class="d-flex justify-content-end me-2" role="search" action="<?php echo $searchAction; ?>" method="GET">
+                        <form class="d-flex justify-content-end me-2" role="search" action="#" method="GET">
                             <input class="form-control me-2 w-25" type="search" name="search" placeholder="Search for sample" aria-label="Search">
-                            <button class="btn btn-outline-success" type="submit">Search</button>
+                            <button class="btn btn-success" type="submit">Search</button>
                         </form>
                         <table class="table table-striped table-hover mt-5">
                             <thead>

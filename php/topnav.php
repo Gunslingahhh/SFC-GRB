@@ -11,7 +11,7 @@
             </a>
             <form class="d-flex me-2" role="search" action="<?php echo $searchAction; ?>" method="GET">
                 <input class="form-control me-2 border-1 border-dark" type="search" name="search" placeholder="<?php echo $searchPlaceholder; ?>" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
+                <button class="btn btn-success" type="submit">Search</button>
             </form>
         </div>
     </div>
