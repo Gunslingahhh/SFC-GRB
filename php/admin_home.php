@@ -39,7 +39,7 @@
                     include "topnav.php";
                 ?>
 
-                    <table class="table table-striped table-bordered table-hover mt-5 text-center">
+                    <table class="table table-striped table-bordered table-hover mt-5 ms-2 text-center">
                         <thead>
                             <tr>
                                 <th>User ID</th>
