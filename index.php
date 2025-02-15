@@ -15,26 +15,29 @@ include "php/connection.php";
 </head>
 <body>
     <?php include "php/index_header.php";
-        $species_data = [];
-
         $stmt = $conn->prepare("SELECT DISTINCT specimen_class FROM specimen");
         $stmt->execute();
         $result = $stmt->get_result();
-
+        
+        $species_data = [];
+        $overall_total = 0; // Initialize the overall total
+        
         while ($row = $result->fetch_assoc()) {
             $specimen_class = $row['specimen_class'];
-
+        
             $count_stmt = $conn->prepare("SELECT COUNT(*) AS total FROM specimen WHERE specimen_class = ?");
             $count_stmt->bind_param("s", $specimen_class);
             $count_stmt->execute();
             $count_result = $count_stmt->get_result();
             $count_row = $count_result->fetch_assoc();
             $total_specimen = $count_row['total'];
-
+        
             $species_data[] = [
                 'specimen_class' => $specimen_class,
                 'total_specimen' => $total_specimen
             ];
+        
+            $overall_total += $total_specimen; // Add to the overall total
         }
 
         $json_data = json_encode($species_data);
@@ -46,7 +49,9 @@ include "php/connection.php";
                     <div class="card w-50 d-flex justify-content-center">
                         <div class="card-body d-flex flex-column justify-content-center align-items-center">
                             <div class="d-flex justify-content-center w-100">
-                                <div id="myChart" class=""></div>  </div>
+                                <div id="myChart" class=""></div>  
+                            </div>
+                            <h5 class="pt-0">Total Specimens Collected: <span class="fw-bold">$overall_total</span></h5>
                         </div>
                     </div>
                 </div>
@@ -89,7 +94,7 @@ include "php/connection.php";
                     },
                     chartArea: {
                         left: 20,      // Padding on the left side (pixels or percentage)
-                        top: 28,       // Padding on the top side
+                        top: 25,       // Padding on the top side
                         right: -20,     // Padding on the right side
                         bottom: 10,    // Padding on the bottom side
                     },
