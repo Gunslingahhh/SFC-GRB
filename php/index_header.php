@@ -28,7 +28,7 @@ include "connection.php";
                 </div>
                 <div class="col d-flex align-items-center justify-content-end">
                     <a class="navbar-brand" href="#">
-                        <img src="assets/image/SWIF LOGO.png" alt="SWIF LOGO" height="80">
+                        <img class="me-5" src="assets/image/SWIF LOGO.png" alt="SWIF LOGO" height="90">
                     </a>
                     <form class="me-5" action="php/login.php">
                         <button class="btn btn-primary" type="submit">Log In</button>
