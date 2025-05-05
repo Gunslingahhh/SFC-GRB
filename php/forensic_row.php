@@ -97,7 +97,7 @@
                         </thead>
                         <tbody>
                             <?php
-                                $sql = $conn->prepare("SELECT subSample_id, subSample_rawSequence, subSample_cleanedSequence, subSample_photoIdentification FROM subSample WHERE specimen_id = $id");
+                                $sql = $conn->prepare("SELECT subSample_id, subSample_rawSequence, subSample_cleanedSequence, subSample_photoIdentification FROM subsample WHERE specimen_id = $id");
                                 $sql->execute();
                                 $result = $sql->get_result();
 
