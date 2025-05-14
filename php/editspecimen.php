@@ -134,7 +134,7 @@ $conn->close();
                                     <div class="col-md-6"> <div class="form-check">
                                         <input class="form-check-input border-1 border-dark" type="radio" name="sample_method" id="biomaterialSpecimen" value="Biomaterial Specimen" required>
                                         <label class="form-check-label" for="biomaterialSpecimen">Biomaterial Specimen</label>
-                                        </div></div>
+                                    </div></div>
                                 </div>
                             </div>
                         </div>
@@ -148,162 +148,68 @@ $conn->close();
                             <p>Detail of specimen</p>
                         </div>
                         <div class="w-75">
-                            
-                                <p>Sampling collection number <input type="text" name="sampling_number" class="form-control border border-1 border-dark w-50" placeholder="Sampling collection number"></p>
-                                <p>Location of Capture <input type="text" name="location_capture" class="form-control border border-1 border-dark w-50" placeholder="Location of Capture"></p>
-                                <p>Latitude
-                                    <input type="radio" class="form-control-m" name="latitude_northsouth" value="N" required><strong>N</strong>
-                                    <input type="radio" class="form-control-m" name="latitude_northsouth" value="S" required><strong>S</strong>
-                                    <input required type="number" class="form-control-sm border-1 border-dark" name="latitude_degree"><strong>°</strong>
-                                    <input required type="number" class="form-control-sm border-1 border-dark" name="latitude_minutes"><strong>'</strong>
-                                    <input required type="number" class="form-control-sm border-1 border-dark" name="latitude_seconds"><strong>''</strong>
-                                </p>
-                                <p>Longitude
-                                    <input type="radio" class="form-control-m" name="longitude_eastwest" value="E" required><strong>E</strong>
-                                    <input type="radio" class="form-control-m" name="longitude_eastwest" value="W" required><strong>W</strong>
-                                    <input required type="number" class="form-control-sm border-1 border-dark" name="longitude_degree"><strong>°</strong>
-                                    <input required type="number" class="form-control-sm border-1 border-dark" name="longitude_minutes"><strong>'</strong>
-                                    <input required type="number" class="form-control-sm border-1 border-dark" name="longitude_seconds"><strong>''</strong>
-                                </p>
-                                <p>Class
-                                    <select required name="sample_class" id="sample_class" class="form-control form-control-sm w-50 border border-1 border-dark">
-                                        <option value="">Class</option>
-                                        <?php if (!empty($class_options)): ?>
-                                            <?php foreach ($class_options as $option): ?>
+                            <p>Sampling collection number <input type="text" name="sampling_number" class="form-control border border-1 border-dark w-50" placeholder="Sampling collection number"></p>
+                            <p>Location of Capture <input type="text" name="location_capture" class="form-control border border-1 border-dark w-50" placeholder="Location of Capture"></p>
+                            <p>Class
+                                <select required name="sample_class" id="sample_class" class="form-control form-control-sm w-50 border border-1 border-dark">
+                                    <option value="">Class</option>
+                                    <?php if (!empty($class_options)): ?>
+                                        <?php foreach ($class_options as $option): ?>
+                                            <option value="<?php echo htmlspecialchars($option); ?>"><?php echo htmlspecialchars($option); ?></option>
+                                        <?php endforeach; ?>
+                                    <?php else: ?>
+                                        <option value="" disabled>No class available</option>
+                                    <?php endif; ?>
+                                </select>
+                            </p>
+                            <div style="display: flex; align-items: center;">
+                                <div style="display: inline-block; margin-right: 10px;"> <p>Genus
+                                    <select required name="sample_genus" id="sample_genus" class="form-control form-control-sm border border-1 border-dark" style="width: 300px;">
+                                        <option value="">Genus</option>
+                                        <?php if (!empty($genus_options)): ?>
+                                            <?php foreach ($genus_options as $option): ?>
                                                 <option value="<?php echo htmlspecialchars($option); ?>"><?php echo htmlspecialchars($option); ?></option>
                                             <?php endforeach; ?>
                                         <?php else: ?>
-                                            <option value="" disabled>No class available</option>
+                                            <option value="" disabled>No genus available</option>
                                         <?php endif; ?>
-                                    </select>
-                                </p>
-                                <div style="display: flex; align-items: center;">
-                                    <div style="display: inline-block; margin-right: 10px;"> <p>Genus
-                                        <select required name="sample_genus" id="sample_genus" class="form-control form-control-sm border border-1 border-dark" style="width: 300px;">
-                                            <option value="">Genus</option>
-                                            <?php if (!empty($genus_options)): ?>
-                                                <?php foreach ($genus_options as $option): ?>
+                                    </select></p>
+                                </div>
+                                <div style="display: inline-block;">
+                                    <p>Species
+                                        <select required name="sample_species" id="sample_species" class="form-control form-control-sm border border-1 border-dark" style="width: 300px;">
+                                            <option value="">Species</option>
+                                            <?php if (!empty($species_options)): ?>
+                                                <?php foreach ($species_options as $option): ?>
                                                     <option value="<?php echo htmlspecialchars($option); ?>"><?php echo htmlspecialchars($option); ?></option>
                                                 <?php endforeach; ?>
                                             <?php else: ?>
-                                                <option value="" disabled>No genus available</option>
+                                                <option value="" disabled>No species available</option>
                                             <?php endif; ?>
-                                        </select></p>
-                                    </div>
-                                    <div style="display: inline-block;">
-                                        <p>Species
-                                            <select required name="sample_species" id="sample_species" class="form-control form-control-sm border border-1 border-dark" style="width: 300px;">
-                                                <option value="">Species</option>
-                                                <?php if (!empty($species_options)): ?>
-                                                    <?php foreach ($species_options as $option): ?>
-                                                        <option value="<?php echo htmlspecialchars($option); ?>"><?php echo htmlspecialchars($option); ?></option>
-                                                    <?php endforeach; ?>
-                                                <?php else: ?>
-                                                    <option value="" disabled>No species available</option>
-                                                <?php endif; ?>
-                                            </select>
-                                        </p>
-                                    </div>
-                                </div>
-                                <div style="display: flex; align-items: center;">
-                                    <div style="display: inline-block; margin-right: 10px;"> <p>Sex
-                                        <select required name="sample_genus" id="sample_genus" name="sample_sex" class="form-control form-control-sm border border-1 border-dark" style="width: 200px;">
-                                            <option value="">Sex</option>
-                                            <option value="Male">MALE</option>
-                                            <option value="Female">FEMALE</option>
-                                        </select></p>
-                                    </div>
-                                    <div style="display: inline-block; margin-right: 10px;"> <p>Stage
-                                        <select required name="sample_genus" id="sample_genus" name="sample_age" class="form-control form-control-sm border border-1 border-dark" style="width: 200px;">
-                                        <option value=""> Stage </option>
-                                        <option value="Subadult">SUBADULT</option>
-                                        <option value="Juvenile">JUVENILE</option>
-                                        <option value="Adult">ADULT</option>
-                                        <option value="Larva">LARVA</option>
-                                        </select></p>
-                                    </div>
-                                    <div style="display: inline-block;">
-                                        <p>Weight <input type="text" name="sample_weight" class="form-control form-control-sm border border-1 border-dark" style="width:200px;" placeholder="Weight(kg)"></p>
-                                    </div>
-                                </div>
-                        </div>
-                    </div>
-
-                    <hr class="border border-dark border-1">
-                    <div>
-                        <div class="d-flex w-100 mt-5">
-                            <div class="w-50">
-                                <p class="fw-bold">DNA Extraction</p>
-                            </div>
-                            <div class="w-75">
-                                <p class="fw-bold">Lab Analyst</p>
-                                <p class="mt-3">Name<input type="text" class="form-control border border-1 border-dark w-50" placeholder="Lab analyst name" name="dna-lab-name"></p>
-                                <p class="mt-3">Contact Number<input type="text" class="form-control border border-1 border-dark w-50 mb-5" placeholder="Lab analyst contact number" name="dna-lab-number"></p>
-
-                                <p class="fw-bold">DNA Extraction Size (bp)</p>
-                                <p class="mt-3"><input type="text" class="form-control border border-1 border-dark w-50 mb-5" placeholder="DNA Extraction Size (bp)" name="dna-extraction-size"></p>
-                            </div>
-                    </div>
-                    <hr class="border border-dark border-1">
-                    <div>
-                        <div class="d-flex w-100 mt-5">
-                            <div class="w-50">
-                                <p class="fw-bold">PCR</p>
-                            </div>
-                            <div class="w-75">
-                                <p class="fw-bold">Lab Analyst</p>
-                                <p class="mt-3">Name<input type="text" class="form-control border border-1 border-dark w-50" placeholder="Lab analyst name" name="pcr-lab-name"></p>
-                                <p class="mt-3">Contact Number<input type="text" class="form-control border border-1 border-dark w-50 mb-5" placeholder="Lab analyst contact number" name="pcr-lab-number"></p>
-
-                                <p class="fw-bold">PCR Amplification</p>
-                                <p class="mt-3">Primer Used<input type="text" class="form-control border border-1 border-dark w-50" placeholder="Primer Used" name="primer-used"></p>
-                                <p class="mt-3">Blast Result (%)<input type="text" class="form-control border border-1 border-dark w-50 mb-5" placeholder="Blast Result (%)" name="blast-result"></p>
-                            </div>
-                    </div>
-                    <hr class="border border-dark border-1">
-                    <div>
-                        <div class="d-flex w-100 mt-5">
-                            <div class="w-50">
-                                <p class="fw-bold">Cleaning Raw Sequence</p>
-                            </div>
-                            <div class="w-75">
-                                <p class="fw-bold">Lab Analyst</p>
-                                <p class="mt-3">Name<input type="text" class="form-control border border-1 border-dark w-50" placeholder="Lab analyst name" name="cleaning-lab-name"></p>
-                                <p class="mt-3">Contact Number<input type="text" class="form-control border border-1 border-dark w-50 mb-5" placeholder="Lab analyst contact number" name="cleaning-lab-number"></p>
-
-                                <div class="card w-50 p-3 border border-dark mt-4 mb-5">
-                                    <h6 class="card-title fw-bold">Raw Sequence</h6>
-                                    <div role="button" id="raw-sequence-container" class="p-5 card-body rounded border border-2 border-primary d-flex flex-column justify-content-center align-items-center text-center">
-                                        <p><span class="fw-bold text-success">Upload</span> your file here</p>
-                                        <p id="rawSequencefileName"></p>
-                                        <input type="file" id="raw-sequence" name="raw-sequence" accept=".txt" style="display:none;">
-                                    </div>
-                                </div>
-
-                                <div class="card w-50 p-3 border border-dark mt-4 mb-5">
-                                    <h6 class="card-title fw-bold">Cleaned Sequence</h6>
-                                    <div role="button" id="cleaned-sequence-container" class="p-5 card-body rounded border border-2 border-primary d-flex flex-column justify-content-center align-items-center text-center">
-                                        <p><span class="fw-bold text-success">Upload</span> your file here</p>
-                                        <p id="cleanedSequencefileName"></p>
-                                        <input type="file" id="cleaned-sequence" name="cleaned-sequence" accept=".txt" style="display:none;">
-                                    </div>
+                                        </select>
+                                    </p>
                                 </div>
                             </div>
-                    </div>
-                    <hr class="border border-dark border-1">
-                    <div>
-                        <div class="d-flex w-100 mt-5">
-                            <div class="w-50">
-                                <p class="fw-bold">Attachments</p>
-                            </div>
-                            <div class="w-75">
-                                <div class="card w-50 p-3 border border-dark mt-4 mb-5">
-                                    <h6 class="card-title fw-bold">Photo Identification</h6>
-                                    <img role="button" id="photo-identification-container" class="card-body rounded border border-2 border-primary" style="object-fit: contain; display: block; min-height: 200px; max-height: 200px;">
-                                    <input type="file" id="photo-identification" name="photo-identification" accept="image/jpeg, image/png, image/jpg" style="display:none;">
+                            <div style="display: flex; align-items: center;">
+                                <div style="display: inline-block; margin-right: 10px;"> <p>Sex
+                                    <select required name="sample_genus" id="sample_genus" name="sample_sex" class="form-control form-control-sm border border-1 border-dark" style="width: 200px;">
+                                        <option value="">Sex</option>
+                                        <option value="Male">MALE</option>
+                                        <option value="Female">FEMALE</option>
+                                    </select></p>
                                 </div>
-                                    <input type="submit" class="btn bg-primary text-white">
-                                </form>
+                                <div style="display: inline-block; margin-right: 10px;"> <p>Stage
+                                    <select required name="sample_genus" id="sample_genus" name="sample_age" class="form-control form-control-sm border border-1 border-dark" style="width: 200px;">
+                                    <option value=""> Stage </option>
+                                    <option value="Subadult">SUBADULT</option>
+                                    <option value="Juvenile">JUVENILE</option>
+                                    <option value="Adult">ADULT</option>
+                                    <option value="Larva">LARVA</option>
+                                    </select></p>
+                                </div>
+                                <div style="display: inline-block;">
+                                    <p>Weight <input type="text" name="sample_weight" class="form-control form-control-sm border border-1 border-dark" style="width:200px;" placeholder="Weight(kg)"></p>
+                                </div>
                             </div>
                         </div>
                     </div>
