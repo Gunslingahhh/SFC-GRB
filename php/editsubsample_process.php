@@ -10,7 +10,7 @@
 
     include "connection.php";
 
-    $id = $_GET['specimen_id'];
+    $specimen_id = $_GET['specimen_id'];
     $subSample_id = $_GET['subSample_id'];
 
     // Check if user_id is set in session
@@ -49,59 +49,59 @@
         
         if ($rawSequenceTemp != ""){
             $raw_file_extension = strtolower(pathinfo($_FILES['raw-sequence']['name'], PATHINFO_EXTENSION));
-            $raw_newfilename = "raw_sequence_" . $id . "_" . $tube_label . "." . $raw_file_extension;
+            $raw_newfilename = "raw_sequence_" . $specimen_id . "_" . $tube_label . "." . $raw_file_extension;
             $raw_target_dir = "../assets/uploads/raw_sequence/";
             $raw_target_file = $raw_target_dir . $raw_newfilename;
             
             if(move_uploaded_file($rawSequenceTemp, $raw_target_file)) {
                 $raw_target_file = $raw_target_dir . $raw_newfilename;
-                header("Location: specimen_row.php?specimen_id=$specimen_id");
+                header("Location: specimen_row.php?specimen_id={$specimen_id}&subSample_id={$subSample_id}");
             } else {
                 $raw_target_file = "";
                 echo "Error uploading file.";
-                header("Location: specimen_row.php?specimen_id=$specimen_id");
+                header("Location: specimen_row.php?specimen_id={$specimen_id}&subSample_id={$subSample_id}");
             }
         }else{
             $raw_target_file = "";
-            header("Location: specimen_row.php?specimen_id=$specimen_id");
+            header("Location: specimen_row.php?specimen_id={$specimen_id}&subSample_id={$subSample_id}");
         }
         
         if ($cleanedSequenceTemp != ""){
             $cleaned_file_extension = strtolower(pathinfo($_FILES['cleaned-sequence']['name'], PATHINFO_EXTENSION));
-            $cleaned_newfilename = "cleaned_sequence_" . $id . "_" . $tube_label . "." . $cleaned_file_extension;
+            $cleaned_newfilename = "cleaned_sequence_" . $specimen_id . "_" . $tube_label . "." . $cleaned_file_extension;
             $cleaned_target_dir = "../assets/uploads/cleaned_sequence/";
             $cleaned_target_file = $cleaned_target_dir . $cleaned_newfilename;
 
             if(move_uploaded_file($cleanedSequenceTemp, $cleaned_target_file)) {
                 $cleaned_target_file = $cleaned_target_dir . $cleaned_newfilename;
-                header("Location: specimen_row.php?specimen_id=$id");
+                header("Location: specimen_row.php?specimen_id={$specimen_id}&subSample_id={$subSample_id}");
             } else {
                 $cleaned_target_file = "";
                 echo "Error uploading file.";
-                header("Location: specimen_row.php?specimen_id=$id");
+                header("Location: specimen_row.php?specimen_id={$specimen_id}&subSample_id={$subSample_id}");
             }
         }else{
             $cleaned_target_file = "";
-            header("Location: specimen_row.php?specimen_id=$id");
+            header("Location: specimen_row.php?specimen_id={$specimen_id}&subSample_id={$subSample_id}");
         }
         
         if ($photoSequenceTemp != ""){
             $photo_file_extension = strtolower(pathinfo($_FILES['photo-identification']['name'], PATHINFO_EXTENSION));
-            $photo_newfilename = "photo_identification_" . $id . "_" . $tube_label . "." . $photo_file_extension;
+            $photo_newfilename = "photo_identification_" . $specimen_id . "_" . $tube_label . "." . $photo_file_extension;
             $photo_target_dir = "../assets/uploads/photo_identification/";
             $photo_target_file = $photo_target_dir . $photo_newfilename;
 
             if(move_uploaded_file($photoSequenceTemp, $photo_target_file)) {
                 $photo_target_file = $photo_target_dir . $photo_newfilename;
-                header("Location: specimen_row.php?specimen_id=$id");
+                header("Location: specimen_row.php?specimen_id={$specimen_id}&subSample_id={$subSample_id}");
             } else {
                 $photo_target_file = "";
                 echo "Error uploading file.";
-                header("Location: specimen_row.php?specimen_id=$id");
+                header("Location: specimen_row.php?specimen_id={$specimen_id}&subSample_id={$subSample_id}");
             }
         }else{
             $photo_target_file = "";
-            header("Location: specimen_row.php?specimen_id=$id");
+            header("Location: specimen_row.php?specimen_id={$specimen_id}&subSample_id={$subSample_id}");
         }
 
         $sql = $conn->prepare(
@@ -119,11 +119,11 @@
 
         if ($sql->execute()) {
             $_SESSION['message'] = "Task posted successfully!";
-            header("Location: specimen_row.php?specimen_id=$id");
+            header("Location: specimen_row.php?specimen_id={$specimen_id}&subSample_id={$subSample_id}");
             exit();
         } else {
             $_SESSION['error'] = "Error registering user: " . $sql->error;
-            header("Location: specimen_row.php?specimen_id=$id");
+            header("Location: specimen_row.php?specimen_id={$specimen_id}&subSample_id={$subSample_id}");
             exit();
         }
 
