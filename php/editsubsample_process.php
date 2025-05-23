@@ -55,15 +55,15 @@
             
             if(move_uploaded_file($rawSequenceTemp, $raw_target_file)) {
                 $raw_target_file = $raw_target_dir . $raw_newfilename;
-                header("Location: forensic_row.php?specimen_id=$specimen_id");
+                header("Location: specimen_row.php?specimen_id=$specimen_id");
             } else {
                 $raw_target_file = "";
                 echo "Error uploading file.";
-                header("Location: forensic_row.php?specimen_id=$specimen_id");
+                header("Location: specimen_row.php?specimen_id=$specimen_id");
             }
         }else{
             $raw_target_file = "";
-            header("Location: forensic_row.php?specimen_id=$specimen_id");
+            header("Location: specimen_row.php?specimen_id=$specimen_id");
         }
         
         if ($cleanedSequenceTemp != ""){
@@ -74,15 +74,15 @@
 
             if(move_uploaded_file($cleanedSequenceTemp, $cleaned_target_file)) {
                 $cleaned_target_file = $cleaned_target_dir . $cleaned_newfilename;
-                header("Location: forensic_row.php?specimen_id=$id");
+                header("Location: specimen_row.php?specimen_id=$id");
             } else {
                 $cleaned_target_file = "";
                 echo "Error uploading file.";
-                header("Location: forensic_row.php?specimen_id=$id");
+                header("Location: specimen_row.php?specimen_id=$id");
             }
         }else{
             $cleaned_target_file = "";
-            header("Location: forensic_row.php?specimen_id=$id");
+            header("Location: specimen_row.php?specimen_id=$id");
         }
         
         if ($photoSequenceTemp != ""){
@@ -93,15 +93,15 @@
 
             if(move_uploaded_file($photoSequenceTemp, $photo_target_file)) {
                 $photo_target_file = $photo_target_dir . $photo_newfilename;
-                header("Location: forensic_row.php?specimen_id=$id");
+                header("Location: specimen_row.php?specimen_id=$id");
             } else {
                 $photo_target_file = "";
                 echo "Error uploading file.";
-                header("Location: forensic_row.php?specimen_id=$id");
+                header("Location: specimen_row.php?specimen_id=$id");
             }
         }else{
             $photo_target_file = "";
-            header("Location: forensic_row.php?specimen_id=$id");
+            header("Location: specimen_row.php?specimen_id=$id");
         }
 
         $sql = $conn->prepare(
@@ -119,11 +119,11 @@
 
         if ($sql->execute()) {
             $_SESSION['message'] = "Task posted successfully!";
-            header("Location: forensic_row.php?specimen_id=$id");
+            header("Location: specimen_row.php?specimen_id=$id");
             exit();
         } else {
             $_SESSION['error'] = "Error registering user: " . $sql->error;
-            header("Location: forensic_row.php?specimen_id=$id");
+            header("Location: specimen_row.php?specimen_id=$id");
             exit();
         }
 
