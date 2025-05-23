@@ -11,7 +11,6 @@ include "connection.php";
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
     <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="adminkit-main/static/js/app.js"></script>
 </head>
 
 <body>
@@ -23,7 +22,7 @@ include "connection.php";
                         <img src="assets/image/logo.png" alt="SFC-GRB System" height="100">
                     </a>
                 </div>
-                <div class="col-6 d-flex align-items-center">
+                <div class="col-8 my-auto">
                     <h3 class="header-text fw-semibold">Sarawak Forestry Corporation Genetic Resource Bank (SFC-GRB)</h3>
                 </div>
                 <div class="col d-flex align-items-center justify-content-end">
