@@ -19,7 +19,6 @@
         <link href="../css/styles.css" rel="stylesheet">
         <link href="../bootstrap-icons-1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
         <script src="../js/bootstrap.bundle.min.js"></script>
-        <script src="../adminkit-main/static/js/app.js"></script>
 
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -60,7 +59,7 @@
                                     $forensic_result = $forensic_stmt->get_result();
 
                                     while ($forensic_row = $forensic_result->fetch_assoc()) {
-                                        echo "<tr class='text-center' role='button' onclick='window.location.href = \"forensic_row.php?specimen_id=" . $forensic_row['specimen_id'] . "\";'>";
+                                        echo "<tr class='text-center' role='button' onclick='window.location.href = \"specimen_row.php?specimen_id=" . $forensic_row['specimen_id'] . "\";'>";
                                             echo "<td>" . $forensic_row['specimen_id'] . "</td>";
                                             echo "<td>" . $forensic_row['specimen_collectionNumber'] . "</td>";
                                             echo "<td>" . $forensic_row['specimen_class'] . "</td>";
