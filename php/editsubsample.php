@@ -10,7 +10,8 @@
 
     include "connection.php";
 
-    $id = $_GET['subSample_id'];
+    $specimen_id = $_GET['specimen_id'];
+    $subSample_id = $_GET['subSample_id'];
 
     $detail_check = $conn->prepare("SELECT s.subSample_dateCollected, s.subSample_storageLocation, s.subSample_coordinate, 
                                         s.subSample_dnaLabName, s.subSample_dnaLabNumber, s.subSample_dnaExtractionSize, 
@@ -20,7 +21,7 @@
                                         st.sampleType_id  -- Select the sampleType_id from the sampleType table
                                     FROM subSample AS s  -- Alias subSample as s for brevity
                                     INNER JOIN sampleType AS st ON s.sampleType_id = st.sampleType_id -- Join based on the common column
-                                    WHERE s.subSample_id = $id;");
+                                    WHERE s.subSample_id = $subSample_id;");
     $detail_check->execute();
     $detail_result = $detail_check->get_result();
     
@@ -61,7 +62,7 @@
             include "sidenav.php";
         ?>
         <main class="col ps-md-0 main-content third-color">
-            <form action="editsubsample_process.php?specimen_id=<?php echo $id ?>" enctype="multipart/form-data" method="POST">
+            <form action="editsubsample_process.php?specimen_id=<?php echo $specimen_id ?>&subSample_id=<?php echo $subSample_id?>" enctype="multipart/form-data" method="POST">
                 <div class="ms-4">
                     <h2 class="fw-bold">Edit a sub-sample</h2>
                     <div class="d-flex w-100 mt-5 pt-5">
