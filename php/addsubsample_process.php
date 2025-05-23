@@ -15,6 +15,8 @@
     // Check if user_id is set in session
     if (isset($_SESSION['userid'])) {
         $dateCollected = $_POST['date-collected'];
+        $locationCapture = $_POST['location-capture'];
+        $coordinate = $_POST['latitude-degree'] . "° " . $_POST['latitude-minutes'] . "' " . $_POST['latitude-seconds'] . '" ' . $_POST['latitude-northsouth'] . " " . $_POST['longitude-degree'] . "° " . $_POST['longitude-minutes'] . "' " . $_POST['longitude-seconds'] . '" ' . $_POST['longitude-eastwest'];
         $storageLocation = $_POST['storage-location'];
         $sampleType = $_POST['sample-type'];
         $dnaLabName = $_POST['dna-lab-name'];
@@ -46,7 +48,7 @@
         }
 
         $tube_label_sql->close();
-        
+
         if ($rawSequenceTemp != ""){
             $raw_file_extension = strtolower(pathinfo($_FILES['raw-sequence']['name'], PATHINFO_EXTENSION));
             $raw_newfilename = "raw_sequence_" . $id . "_" . $tube_label . "." . $raw_file_extension;
@@ -55,15 +57,15 @@
             
             if(move_uploaded_file($rawSequenceTemp, $raw_target_file)) {
                 $raw_target_file = $raw_target_dir . $raw_newfilename;
-                header("Location: forensic_row.php?specimen_id=$id");
+                // header("Location: specimen_row.php?specimen_id=$id");
             } else {
                 $raw_target_file = "";
                 echo "Error uploading file.";
-                header("Location: forensic_row.php?specimen_id=$id");
+                // header("Location: specimen_row.php?specimen_id=$id");
             }
         }else{
             $raw_target_file = "";
-            header("Location: forensic_row.php?specimen_id=$id");
+            // header("Location: specimen_row.php?specimen_id=$id");
         }
         
         if ($cleanedSequenceTemp != ""){
@@ -74,15 +76,15 @@
 
             if(move_uploaded_file($cleanedSequenceTemp, $cleaned_target_file)) {
                 $cleaned_target_file = $cleaned_target_dir . $cleaned_newfilename;
-                header("Location: forensic_row.php?specimen_id=$id");
+                // header("Location: specimen_row.php?specimen_id=$id");
             } else {
                 $cleaned_target_file = "";
                 echo "Error uploading file.";
-                header("Location: forensic_row.php?specimen_id=$id");
+                // header("Location: specimen_row.php?specimen_id=$id");
             }
         }else{
             $cleaned_target_file = "";
-            header("Location: forensic_row.php?specimen_id=$id");
+            // header("Location: specimen_row.php?specimen_id=$id");
         }
         
         if ($photoSequenceTemp != ""){
@@ -93,21 +95,23 @@
 
             if(move_uploaded_file($photoSequenceTemp, $photo_target_file)) {
                 $photo_target_file = $photo_target_dir . $photo_newfilename;
-                header("Location: forensic_row.php?specimen_id=$id");
+                // header("Location: specimen_row.php?specimen_id=$id");
             } else {
                 $photo_target_file = "";
                 echo "Error uploading file.";
-                header("Location: forensic_row.php?specimen_id=$id");
+                // header("Location: specimen_row.php?specimen_id=$id");
             }
         }else{
             $photo_target_file = "";
-            header("Location: forensic_row.php?specimen_id=$id");
+            // header("Location: specimen_row.php?specimen_id=$id");
         }
 
         $sql = $conn->prepare("INSERT INTO subSample(
             specimen_id,
             sampleType_id,
             subSample_dateCollected,
+            subSample_locationCapture,
+            subSample_coordinate,
             subSample_storageLocation,
             subSample_dnaLabName,
             subSample_dnaLabNumber,
@@ -120,12 +124,14 @@
             subSample_cleaningLabNumber,
             subSample_rawSequence,
             subSample_cleanedSequence,
-            subSample_photoIdentification) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+            subSample_photoIdentification) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
 
-        $sql->bind_param("iissssisssisssss", 
+        $sql->bind_param("iissssssisssisssss", 
             $id,
             $sampleType,
             $dateCollected,
+            $locationCapture,
+            $coordinate,
             $storageLocation,
             $dnaLabName,
             $dnaLabNumber,
@@ -142,11 +148,11 @@
 
         if ($sql->execute()) {
             $_SESSION['message'] = "Task posted successfully!";
-            header("Location: forensic_row.php?specimen_id=$id");
+            header("Location: specimen_row.php?specimen_id=$id");
             exit();
         } else {
-            $_SESSION['error'] = "Error registering user: " . $sql->error;
-            header("Location: forensic_row.php?specimen_id=$id");
+            $_SESSION['error'] = "Error registering subsample: " . $sql->error;
+            header("Location: specimen_row.php?specimen_id=$id");
             exit();
         }
 
