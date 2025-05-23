@@ -125,7 +125,7 @@
                                     }
                                     
                                     // echo "<tr onclick='window.location.href = \"editsubsample.php?subSample_id=" . $subsample_row['subSample_id'] . "\";'>";
-                                    echo "<tr role='button' onclick='window.location.href = \"editsubsample.php?subSample_id=" . $subsample_row['subSample_id'] . "\";'>";
+                                    echo "<tr role='button' onclick='window.location.href=\"editsubsample.php?specimen_id=" . $id . "&subSample_id=" . $subsample_row['subSample_id'] . "\";'>";
                                     echo "<td class='text-center'>" . $subsample_row['subSample_id'] . "</td>";
                                     echo "<td class='text-center'><img class='img-fluid rounded-circle' width='15px' src='" . $rawSequence_status . "'></td>";
                                     echo "<td class='text-center'><img class='img-fluid rounded-circle' width='15px' src='" . $cleanedSequence_status . "'></td>";
