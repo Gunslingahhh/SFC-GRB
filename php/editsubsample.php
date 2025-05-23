@@ -61,7 +61,7 @@
             include "sidenav.php";
         ?>
         <main class="col ps-md-0 main-content third-color">
-            <form action="addsubsample_process.php?specimen_id=<?php echo $id ?>" enctype="multipart/form-data" method="POST">
+            <form action="editsubsample_process.php?specimen_id=<?php echo $id ?>" enctype="multipart/form-data" method="POST">
                 <div class="ms-4">
                     <h2 class="fw-bold">Edit a sub-sample</h2>
                     <div class="d-flex w-100 mt-5 pt-5">
