@@ -40,20 +40,20 @@
                                 
                             <p class="mt-3">Date collected <input type="date" class="form-control border border-1 border-dark w-50" id="date-collected" name="date-collected"></p>
 
-                            <p>Location of Capture <input type="text" name="location_capture" class="form-control border border-1 border-dark w-50" placeholder="Location of Capture"></p>
+                            <p>Location of Capture <input type="text" name="location-capture" class="form-control border border-1 border-dark w-50" placeholder="Location of Capture"></p>
                                 <p>Latitude
-                                    <input type="radio" class="form-control-m" name="latitude_northsouth" value="N" required><strong>N</strong>
-                                    <input type="radio" class="form-control-m" name="latitude_northsouth" value="S" required><strong>S</strong>
-                                    <input required type="number" class="form-control-sm border-1 border-dark" name="latitude_degree"><strong>°</strong>
-                                    <input required type="number" class="form-control-sm border-1 border-dark" name="latitude_minutes"><strong>'</strong>
-                                    <input required type="number" class="form-control-sm border-1 border-dark" name="latitude_seconds"><strong>''</strong>
+                                    <input type="radio" class="form-control-m" name="latitude-northsouth" value="N" required><strong>N</strong>
+                                    <input type="radio" class="form-control-m" name="latitude-northsouth" value="S" required><strong>S</strong>
+                                    <input required type="number" class="form-control-sm border-1 border-dark" name="latitude-degree" step="1" min="0"><strong>°</strong>
+                                    <input required type="number" class="form-control-sm border-1 border-dark" name="latitude-minutes" step="0.01" min="0"><strong>'</strong>
+                                    <input required type="number" class="form-control-sm border-1 border-dark" name="latitude-seconds" step="0.01" min="0"><strong>''</strong>
                                 </p>
                                 <p>Longitude
-                                    <input type="radio" class="form-control-m" name="longitude_eastwest" value="E" required><strong>E</strong>
-                                    <input type="radio" class="form-control-m" name="longitude_eastwest" value="W" required><strong>W</strong>
-                                    <input required type="number" class="form-control-sm border-1 border-dark" name="longitude_degree"><strong>°</strong>
-                                    <input required type="number" class="form-control-sm border-1 border-dark" name="longitude_minutes"><strong>'</strong>
-                                    <input required type="number" class="form-control-sm border-1 border-dark" name="longitude_seconds"><strong>''</strong>
+                                    <input type="radio" class="form-control-m" name="longitude-eastwest" value="E" required><strong>E</strong>
+                                    <input type="radio" class="form-control-m" name="longitude-eastwest" value="W" required><strong>W</strong>
+                                    <input required type="number" class="form-control-sm border-1 border-dark" name="longitude-degree" step="1" min="0"><strong>°</strong>
+                                    <input required type="number" class="form-control-sm border-1 border-dark" name="longitude-minutes" step="0.01" min="0"><strong>'</strong>
+                                    <input required type="number" class="form-control-sm border-1 border-dark" name="longitude-seconds" step="0.01" min="0"><strong>''</strong>
                                 </p>
                         </div>
                 </div>
