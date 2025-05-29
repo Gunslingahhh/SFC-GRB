@@ -1,0 +1,25 @@
+# Ignore PHP IDE config files
+.idea/
+.vscode/
+
+# Ignore environment files
+.env
+
+# Ignore logs
+*.log
+
+# Ignore cache files
+cache/
+
+# Ignore vendor folder (for composer)
+vendor/
+
+# Ignore node_modules (if using Node)
+node_modules/
+
+# Ignore uploads
+assets/uploads/
+
+# OS files
+.DS_Store
+Thumbs.db
