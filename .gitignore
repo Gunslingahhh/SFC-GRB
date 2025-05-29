@@ -20,9 +20,6 @@ node_modules/
 # Ignore uploads
 assets/uploads/
 
-#Ignore connection.php
-php/connection.php
-
 # OS files
 .DS_Store
 Thumbs.db
