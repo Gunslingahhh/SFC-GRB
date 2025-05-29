@@ -226,7 +226,9 @@ $conn->close();
                                         <p>Weight <input type="number" name="sample_weight" class="form-control form-control-sm border border-1 border-dark" style="width:200px;" placeholder="Weight(kg)"></p>
                                     </div>
                                 </div>
-                                <input type="submit" class="btn bg-primary text-white">
+                                <div class="w-75">
+                                    <button type="submit" name="info_submit" class="btn btn-primary w-50">Submit</button>
+                                </div>
                             </div>
                         </div>
                     </form>
