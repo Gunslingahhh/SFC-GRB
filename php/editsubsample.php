@@ -25,23 +25,23 @@
     $detail_check->execute();
     $detail_result = $detail_check->get_result();
     
-    while ($user_row = $detail_result->fetch_assoc()) {
-        $dateCollected = $user_row['subSample_dateCollected'];
-        $storageLocation = $user_row['subSample_storageLocation'];
-        $coordinate = $user_row['subSample_coordinate'];
-        $dnaLabName = $user_row['subSample_dnaLabName'];
-        $dnaLabNumber = $user_row['subSample_dnaLabNumber'];
-        $dnaExtractionSize = $user_row['subSample_dnaExtractionSize'];
-        $pcrLabName = $user_row['subSample_pcrLabName'];
-        $pcrLabNumber = $user_row['subSample_pcrLabNumber'];
-        $primerUsed = $user_row['subSample_primerUsed'];
-        $blastResult = $user_row['subSample_blastResult'];
-        $cleaningLabName = $user_row['subSample_cleaningLabName'];
-        $cleaningLabNumber = $user_row['subSample_cleaningLabNumber'];
-        $rawSequence = $user_row['subSample_rawSequence'];
-        $cleanedSequence = $user_row['subSample_cleanedSequence'];
-        $photoIdentification = $user_row['subSample_photoIdentification'];
-        $sampleTypeId = $user_row['sampleType_id'];
+    while ($subSample_row = $detail_result->fetch_assoc()) {
+        $dateCollected = $subSample_row['subSample_dateCollected'];
+        $storageLocation = $subSample_row['subSample_storageLocation'];
+        $coordinate = $subSample_row['subSample_coordinate'];
+        $dnaLabName = $subSample_row['subSample_dnaLabName'];
+        $dnaLabNumber = $subSample_row['subSample_dnaLabNumber'];
+        $dnaExtractionSize = $subSample_row['subSample_dnaExtractionSize'];
+        $pcrLabName = $subSample_row['subSample_pcrLabName'];
+        $pcrLabNumber = $subSample_row['subSample_pcrLabNumber'];
+        $primerUsed = $subSample_row['subSample_primerUsed'];
+        $blastResult = $subSample_row['subSample_blastResult'];
+        $cleaningLabName = $subSample_row['subSample_cleaningLabName'];
+        $cleaningLabNumber = $subSample_row['subSample_cleaningLabNumber'];
+        $rawSequence = $subSample_row['subSample_rawSequence'];
+        $cleanedSequence = $subSample_row['subSample_cleanedSequence'];
+        $photoIdentification = $subSample_row['subSample_photoIdentification'];
+        $sampleTypeId = $subSample_row['sampleType_id'];
     }
 ?>
 
@@ -54,7 +54,6 @@
         <link href="../css/styles.css" rel="stylesheet">
         <link href="../bootstrap-icons-1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
         <script src="../js/bootstrap.bundle.min.js"></script>
-        <script src="../adminkit-main/static/js/app.js"></script>
         <script src="../js/app.js"></script>
     </head>
     <body>
@@ -274,7 +273,7 @@
                                 <div role="button" id="raw-sequence-container" class="p-5 card-body rounded border border-2 border-primary d-flex flex-column justify-content-center align-items-center text-center">
                                     <p><span class="fw-bold text-success">Replace</span> your file here</p>
                                     <p id="rawSequencefileName" class="text-break"><?php echo $rawSequence ?></p>
-                                    <input type="file" id="raw-sequence" name="raw-sequence" accept=".txt" style="display:none;">
+                                    <input type="file" id="raw-sequence" name="raw-sequence" value="" accept=".txt" style="display:none;">
                                 </div>
                             </div>
 
