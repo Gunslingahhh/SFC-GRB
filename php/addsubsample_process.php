@@ -10,7 +10,7 @@
 
     include "connection.php";
 
-    $id = $_GET['specimen_id'];
+    $specimen_id = $_GET['specimen_id'];
 
     // Check if user_id is set in session
     if (isset($_SESSION['userid'])) {
@@ -30,12 +30,12 @@
         $cleaningLabNumber = $_POST['cleaning-lab-number'];
         $rawSequenceTemp = $_FILES['raw-sequence']['tmp_name'];
         $cleanedSequenceTemp = $_FILES['cleaned-sequence']['tmp_name'];
-        $photoSequenceTemp = $_FILES['photo-identification']['tmp_name'];
+        $photoIdentificationTemp = $_FILES['photo-identification']['tmp_name'];
         date_default_timezone_set('Asia/Kuching');
         $image_createdAt = date("dmYHis");
 
         $tube_label_sql = $conn->prepare("SELECT sampleType_tube_label FROM sampleType WHERE sampleType_id = ?");
-        $tube_label_sql->bind_param("i", $sampleType); // Assuming sampleType_id is an integer
+        $tube_label_sql->bind_param("i", $sampleType);
         $tube_label_sql->execute();
 
         $result = $tube_label_sql->get_result();
@@ -49,61 +49,67 @@
 
         $tube_label_sql->close();
 
-        if ($rawSequenceTemp != ""){
+        // Check if a new file was uploaded
+        if ($rawSequenceTemp != "") {
             $raw_file_extension = strtolower(pathinfo($_FILES['raw-sequence']['name'], PATHINFO_EXTENSION));
-            $raw_newfilename = "raw_sequence_" . $id . "_" . $tube_label . "." . $raw_file_extension;
+            $raw_newfilename = "rawSequence_SFC-GRB-" . $specimen_id . "_" . $tube_label . "." . $raw_file_extension;
             $raw_target_dir = "../assets/uploads/raw_sequence/";
             $raw_target_file = $raw_target_dir . $raw_newfilename;
-            
-            if(move_uploaded_file($rawSequenceTemp, $raw_target_file)) {
-                $raw_target_file = $raw_target_dir . $raw_newfilename;
-                // header("Location: specimen_row.php?specimen_id=$id");
+
+            if (move_uploaded_file($rawSequenceTemp, $raw_target_file)) {
+                // Success: file is moved
+                echo "File successfully moved!";
             } else {
-                $raw_target_file = "";
+                // Error moving file
                 echo "Error uploading file.";
-                // header("Location: specimen_row.php?specimen_id=$id");
+                $raw_target_file = "";
             }
-        }else{
+        } else {
+            // No file uploaded
+            echo "No file selected.";
             $raw_target_file = "";
-            // header("Location: specimen_row.php?specimen_id=$id");
         }
         
-        if ($cleanedSequenceTemp != ""){
+        // Check if a new file was uploaded
+        if ($cleanedSequenceTemp != "") {
             $cleaned_file_extension = strtolower(pathinfo($_FILES['cleaned-sequence']['name'], PATHINFO_EXTENSION));
-            $cleaned_newfilename = "cleaned_sequence_" . $id . "_" . $tube_label . "." . $cleaned_file_extension;
+            $cleaned_newfilename = "cleanedSequence_SFC-GRB-" . $specimen_id . "_" . $tube_label . "." . $cleaned_file_extension;
             $cleaned_target_dir = "../assets/uploads/cleaned_sequence/";
             $cleaned_target_file = $cleaned_target_dir . $cleaned_newfilename;
 
-            if(move_uploaded_file($cleanedSequenceTemp, $cleaned_target_file)) {
-                $cleaned_target_file = $cleaned_target_dir . $cleaned_newfilename;
-                // header("Location: specimen_row.php?specimen_id=$id");
+            if (move_uploaded_file($cleanedSequenceTemp, $cleaned_target_file)) {
+                // Success: file is moved
+                echo "File successfully moved!";
             } else {
-                $cleaned_target_file = "";
+                // Error moving file
                 echo "Error uploading file.";
-                // header("Location: specimen_row.php?specimen_id=$id");
+                $cleaned_target_file = "";
             }
-        }else{
+        } else {
+            // No file uploaded
+            echo "No file selected.";
             $cleaned_target_file = "";
-            // header("Location: specimen_row.php?specimen_id=$id");
         }
         
-        if ($photoSequenceTemp != ""){
+        // Check if a new file was uploaded
+        if ($photoIdentificationTemp != "") {
             $photo_file_extension = strtolower(pathinfo($_FILES['photo-identification']['name'], PATHINFO_EXTENSION));
-            $photo_newfilename = "photo_identification_" . $id . "_" . $tube_label . "." . $photo_file_extension;
+            $photo_newfilename = "photoIdentification_SFC-GRB-" . $specimen_id . "_" . $tube_label . "." . $photo_file_extension;
             $photo_target_dir = "../assets/uploads/photo_identification/";
             $photo_target_file = $photo_target_dir . $photo_newfilename;
 
-            if(move_uploaded_file($photoSequenceTemp, $photo_target_file)) {
-                $photo_target_file = $photo_target_dir . $photo_newfilename;
-                // header("Location: specimen_row.php?specimen_id=$id");
+            if (move_uploaded_file($photoIdentificationTemp, $photo_target_file)) {
+                // Success: file is moved
+                echo "File successfully moved!";
             } else {
-                $photo_target_file = "";
+                // Error moving file
                 echo "Error uploading file.";
-                // header("Location: specimen_row.php?specimen_id=$id");
+                $photo_target_file = "";
             }
-        }else{
+        } else {
+            // No file uploaded
+            echo "No file selected.";
             $photo_target_file = "";
-            // header("Location: specimen_row.php?specimen_id=$id");
         }
 
         $sql = $conn->prepare("INSERT INTO subSample(
@@ -126,8 +132,8 @@
             subSample_cleanedSequence,
             subSample_photoIdentification) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
 
-        $sql->bind_param("iissssssisssisssss", 
-            $id,
+        $sql->bind_param("iissssssdsssdsssss", 
+            $specimen_id,
             $sampleType,
             $dateCollected,
             $locationCapture,
@@ -148,11 +154,11 @@
 
         if ($sql->execute()) {
             $_SESSION['message'] = "Task posted successfully!";
-            header("Location: specimen_row.php?specimen_id=$id");
+            header("Location: specimen_row.php?specimen_id=$specimen_id");
             exit();
         } else {
             $_SESSION['error'] = "Error registering subsample: " . $sql->error;
-            header("Location: specimen_row.php?specimen_id=$id");
+            header("Location: specimen_row.php?specimen_id=$specimen_id");
             exit();
         }
 
