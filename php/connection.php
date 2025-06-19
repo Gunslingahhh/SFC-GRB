@@ -4,7 +4,7 @@
   $password = "heavydirtysoul";
 
   // Create connection
-  $conn = mysqli_connect($servername, $username, $password, "system1");
+  $conn = mysqli_connect($servername, $username, $password, "sfc-grb");
 
   //Check connection
   // if (!$conn) {
